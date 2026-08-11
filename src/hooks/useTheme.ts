@@ -14,6 +14,10 @@ export function useTheme() {
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, mode);
     document.documentElement.setAttribute('data-theme', mode);
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) {
+      meta.setAttribute('content', mode === 'dark' ? '#0c0a09' : '#fafaf9');
+    }
   }, [mode]);
 
   const toggle = useCallback(() => {

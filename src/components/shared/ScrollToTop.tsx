@@ -14,6 +14,7 @@ export default function ScrollToTop() {
       size="large"
       icon={<UpOutlined />}
       onClick={scrollToTop}
+      aria-label="Scroll to top"
       style={{
         position: 'fixed',
         bottom: 32,

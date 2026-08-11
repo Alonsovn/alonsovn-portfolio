@@ -46,11 +46,20 @@ const categoryColors: Record<Project['category'], string> = {
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState<string>('All');
 
+  const projects = projectsData as Project[];
+
+  const availableFilters = useMemo(
+    () => FILTER_OPTIONS.filter(
+      (opt) => opt === 'All' || projects.some((p) => p.category === filterToCategory[opt])
+    ),
+    [projects]
+  );
+
   const filtered = useMemo(() => {
     const target = filterToCategory[activeFilter];
-    if (target === null) return projectsData as Project[];
-    return (projectsData as Project[]).filter((p) => p.category === target);
-  }, [activeFilter]);
+    if (target === null) return projects;
+    return projects.filter((p) => p.category === target);
+  }, [activeFilter, projects]);
 
   return (
     <motion.section
@@ -69,7 +78,7 @@ export default function Projects() {
 
       <motion.div className={styles.filters} variants={itemVariants}>
         <Segmented
-          options={[...FILTER_OPTIONS]}
+          options={[...availableFilters]}
           value={activeFilter}
           onChange={(value) => setActiveFilter(value as string)}
         />

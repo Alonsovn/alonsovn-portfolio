@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Typography, Button, Card, Divider } from 'antd';
-import { MailOutlined, GithubOutlined, LinkedinOutlined, FileTextOutlined } from '@ant-design/icons';
+import { MailOutlined, GithubOutlined, LinkedinOutlined, FileTextOutlined, PhoneOutlined } from '@ant-design/icons';
 import { sectionIds } from '@/styles/theme';
 import styles from './Contact.module.css';
 
@@ -48,14 +48,20 @@ export default function Contact() {
 
       <motion.div variants={fadeUp}>
         <Card className={styles.content}>
-          <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '0.75rem' }}>
             <Text strong style={{ fontSize: '1.1rem' }}>
-              alonso@example.com
+              alonsonh94@gmail.com
+            </Text>
+          </div>
+          <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+            <Text type="secondary">
+              <PhoneOutlined style={{ marginRight: 6 }} />
+              +506 8959 9092
             </Text>
           </div>
 
           <div className={styles.actions}>
-            <Button type="primary" size="large" icon={<MailOutlined />} href="mailto:alonso@example.com">
+            <Button type="primary" size="large" icon={<MailOutlined />} href="mailto:alonsonh94@gmail.com">
               Send Email
             </Button>
             <Button size="large" icon={<FileTextOutlined />} href="/resume.pdf" target="_blank" download>
@@ -76,7 +82,7 @@ export default function Contact() {
             </Button>
             <Button
               icon={<LinkedinOutlined />}
-              href="https://linkedin.com/in/alonsovn"
+              href="https://linkedin.com/in/alonso-villanueva-naranjo-739341144"
               target="_blank"
               rel="noopener noreferrer"
             >

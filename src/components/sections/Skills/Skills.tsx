@@ -10,9 +10,9 @@ import styles from './Skills.module.css';
 const { Title } = Typography;
 
 const proficiencyColors: Record<Skill['proficiency'], string> = {
-  expert: '#1677ff',
-  advanced: '#52c41a',
-  intermediate: '#faad14',
+  expert: '#0d9488',
+  advanced: '#10b981',
+  intermediate: '#f59e0b',
   beginner: 'default',
 };
 
@@ -66,6 +66,30 @@ export default function Skills() {
         </Title>
       </motion.div>
 
+      <motion.div
+        variants={itemVariants}
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '1.5rem',
+          marginBottom: '2rem',
+          fontSize: '0.85rem',
+          opacity: 0.75,
+        }}
+      >
+        {(['expert', 'advanced', 'intermediate'] as const).map((level) => (
+          <span key={level} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+            <span style={{
+              width: 10,
+              height: 10,
+              borderRadius: 3,
+              background: level === 'expert' ? '#0d9488' : level === 'advanced' ? '#10b981' : '#f59e0b',
+            }} />
+            {level.charAt(0).toUpperCase() + level.slice(1)}
+          </span>
+        ))}
+      </motion.div>
+
       {CATEGORIES.map((category) => {
         const skills = grouped[category];
         if (skills.length === 0) return null;
@@ -97,6 +121,7 @@ export default function Skills() {
                       fontSize: '0.9rem',
                       width: '100%',
                       textAlign: 'center',
+                      fontWeight: skill.proficiency === 'expert' ? 600 : skill.proficiency === 'advanced' ? 500 : 400,
                     }}
                   >
                     {skill.name}

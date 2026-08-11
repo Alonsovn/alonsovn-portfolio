@@ -18,6 +18,9 @@
   letter-spacing: -0.5px;
   cursor: pointer;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .nav {
@@ -29,6 +32,25 @@
 .navLink {
   font-weight: 500;
   transition: color 0.2s ease;
+}
+
+.skipLink {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: #0d9488;
+  color: #fff;
+  border-radius: 0 0 8px 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 1001;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skipLink:focus-visible {
+  top: 0;
 }
 
 .mobileMenu {

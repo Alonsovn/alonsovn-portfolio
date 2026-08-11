@@ -34,7 +34,7 @@ export default function App() {
             style={{ minHeight: '100vh', background: isDark ? '#141414' : '#f5f5f5' }}
           >
             <Header isDark={isDark} onThemeToggle={toggle} />
-            <Content>
+            <Content id="main-content">
               <Suspense fallback={sectionLoader}>
                 <Hero />
                 <About />

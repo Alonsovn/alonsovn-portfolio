@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button, Space, Drawer } from 'antd';
 import {
   MenuOutlined,
@@ -26,6 +26,28 @@ const navItems = [
 
 export default function Header({ isDark, onThemeToggle }: HeaderProps) {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        }
+      },
+      { rootMargin: '-40% 0px -55% 0px' }
+    );
+
+    const ids = Object.values(sectionIds);
+    for (const id of ids) {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const scrollTo = (id: string) => {
     setDrawerOpen(false);
@@ -44,10 +66,28 @@ export default function Header({ isDark, onThemeToggle }: HeaderProps) {
       <span
         className={styles.logo}
         onClick={() => scrollTo(sectionIds.hero)}
-        style={{ color: isDark ? '#fff' : '#000' }}
+        style={{ color: isDark ? '#fff' : '#1c1917' }}
       >
+        <span style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: 32,
+          height: 32,
+          borderRadius: 8,
+          background: 'linear-gradient(135deg, #0d9488, #14b8a6)',
+          color: '#fff',
+          fontWeight: 700,
+          fontSize: '0.8rem',
+          marginRight: 8,
+          fontFamily: "'Space Grotesk', sans-serif",
+        }}>A</span>
         Alonso
       </span>
+
+      <a href="#main-content" className={styles.skipLink}>
+        Skip to main content
+      </a>
 
       <nav className={styles.nav}>
         <Space size="small">
@@ -57,6 +97,10 @@ export default function Header({ isDark, onThemeToggle }: HeaderProps) {
               type="text"
               className={styles.navLink}
               onClick={() => scrollTo(item.key)}
+              style={{
+                color: activeSection === item.key ? '#0d9488' : undefined,
+                fontWeight: activeSection === item.key ? 600 : 500,
+              }}
             >
               {item.label}
             </Button>
@@ -66,17 +110,22 @@ export default function Header({ isDark, onThemeToggle }: HeaderProps) {
             icon={<GithubOutlined />}
             href="https://github.com/Alonsovn"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
           />
           <Button
             type="text"
             icon={<LinkedinOutlined />}
-            href="https://linkedin.com/in/alonsovn"
+            href="https://linkedin.com/in/alonso-villanueva-naranjo-739341144"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
           />
           <Button
             type="text"
             icon={isDark ? <SunOutlined /> : <MoonOutlined />}
             onClick={onThemeToggle}
+            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
           />
         </Space>
       </nav>
@@ -86,6 +135,7 @@ export default function Header({ isDark, onThemeToggle }: HeaderProps) {
           type="text"
           icon={<MenuOutlined />}
           onClick={() => setDrawerOpen(true)}
+          aria-label="Open navigation menu"
         />
       </div>
 
@@ -96,7 +146,7 @@ export default function Header({ isDark, onThemeToggle }: HeaderProps) {
         onClose={() => setDrawerOpen(false)}
         styles={{ body: { padding: '1rem' } }}
       >
-        <Space direction="vertical" size="middle" style={{ width: '100%' }}>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           {navItems.map((item) => (
             <Button
               key={item.key}

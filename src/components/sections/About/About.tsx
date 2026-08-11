@@ -78,7 +78,7 @@ export default function About() {
               className={styles.highlightItem}
               variants={itemVariants}
             >
-              <span className={styles.highlightIcon}>{icon}</span>
+              <span className={styles.highlightIcon} aria-hidden="true">{icon}</span>
               <div>
                 <div className={styles.highlightTitle}>{title}</div>
                 <div className={styles.highlightDesc}>{desc}</div>

@@ -14,23 +14,27 @@ export default function Footer() {
         background: 'transparent',
       }}
     >
-      <Space direction="vertical" size="small">
+      <Space orientation="vertical" size="small">
         <Space size="middle">
           <Button
             type="text"
             icon={<GithubOutlined />}
             href="https://github.com/Alonsovn"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
           />
           <Button
             type="text"
             icon={<LinkedinOutlined />}
-            href="https://linkedin.com/in/alonsovn"
+            href="https://linkedin.com/in/alonso-villanueva-naranjo-739341144"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
           />
         </Space>
         <Text type="secondary">
-          Built with <HeartFilled style={{ color: '#ff4d4f' }} /> using React, TypeScript, and Ant Design
+          Built with <HeartFilled style={{ color: '#0d9488' }} /> using React, TypeScript, and Ant Design
         </Text>
         <Text type="secondary">
           &copy; {year} Alonso. All rights reserved.

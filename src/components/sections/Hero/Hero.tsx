@@ -4,7 +4,7 @@ import { GithubOutlined, LinkedinOutlined, DownloadOutlined, ArrowDownOutlined }
 import { sectionIds } from '@/styles/theme';
 import styles from './Hero.module.css';
 
-const { Title, Text } = Typography;
+const { Text } = Typography;
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -46,14 +46,34 @@ export default function Hero() {
           Hello, I'm
         </motion.p>
 
+        <motion.div
+          variants={itemVariants}
+          style={{
+            width: 56,
+            height: 56,
+            borderRadius: 14,
+            background: 'linear-gradient(135deg, #0d9488, #14b8a6)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0 auto 1.5rem',
+            fontSize: '1.5rem',
+            fontWeight: 700,
+            color: '#fff',
+            fontFamily: "'Space Grotesk', sans-serif",
+          }}
+        >
+          A
+        </motion.div>
+
         <motion.h1 className={styles.headline} variants={itemVariants}>
           <span className={styles.highlight}>Alonso</span>
         </motion.h1>
 
         <motion.div variants={itemVariants}>
-          <Title level={3} style={{ marginBottom: '1.5rem', fontWeight: 600 }}>
+          <p style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', fontWeight: 500, opacity: 0.75, marginBottom: '0.5rem' }}>
             Full-Stack Engineer | Open Source Contributor | Tech Educator
-          </Title>
+          </p>
         </motion.div>
 
         <motion.div variants={itemVariants}>
@@ -97,13 +117,17 @@ export default function Hero() {
             icon={<GithubOutlined />}
             href="https://github.com/Alonsovn"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
           />
           <Button
             type="text"
             size="large"
             icon={<LinkedinOutlined />}
-            href="https://linkedin.com/in/alonsovn"
+            href="https://linkedin.com/in/alonso-villanueva-naranjo-739341144"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
           />
         </motion.div>
       </div>
@@ -113,6 +137,7 @@ export default function Hero() {
         variants={itemVariants}
         onClick={() => scrollTo(sectionIds.about)}
         style={{ cursor: 'pointer' }}
+        aria-hidden="true"
       >
         <ArrowDownOutlined style={{ fontSize: '1.25rem' }} />
       </motion.div>
