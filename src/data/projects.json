@@ -1,0 +1,92 @@
+[
+  {
+    "id": "story-flow-engine",
+    "title": "Story Flow Engine",
+    "description": "A narrative flow engine for managing branching storylines and interactive storytelling experiences.",
+    "longDescription": "Story Flow Engine is a TypeScript-based narrative engine that enables developers to create complex branching storylines with state management, conditional paths, and dynamic content generation. Built with a focus on extensibility and developer experience.",
+    "image": "/projects/story-flow-engine.png",
+    "tags": ["TypeScript", "State Management", "Narrative"],
+    "techStack": ["TypeScript", "Node.js", "Jest"],
+    "category": "open-source",
+    "organization": "alonsovndev",
+    "links": {
+      "github": "https://github.com/alonsovndev/story-flow-engine"
+    },
+    "featured": true,
+    "metrics": {
+      "stars": 15,
+      "contributors": 3
+    }
+  },
+  {
+    "id": "opencode-setup",
+    "title": "OpenCode Setup",
+    "description": "Configuration toolkit for OpenCode AI coding assistant with orchestration models, quality gates, and domain subagents.",
+    "longDescription": "A comprehensive configuration and setup toolkit for OpenCode, the AI coding assistant. Includes orchestration models, quality gates, domain-specific subagent routing, and bootstrap scripts for repository configuration.",
+    "image": "/projects/opencode-setup.png",
+    "tags": ["Configuration", "AI Tools", "Developer Experience"],
+    "techStack": ["Shell", "Markdown", "YAML", "TypeScript"],
+    "category": "open-source",
+    "organization": "alonsovndev",
+    "links": {
+      "github": "https://github.com/alonsovndev/opencode-setup"
+    },
+    "featured": true,
+    "metrics": {
+      "stars": 12,
+      "contributors": 2
+    }
+  },
+  {
+    "id": "e2e-docs",
+    "title": "EndToEndLabCR Documentation",
+    "description": "Comprehensive tech documentation platform for knowledge transfer and learning, built with Markdown and modern static site generation.",
+    "longDescription": "A complete documentation platform serving as a knowledge base for EndToEndLabCR's educational initiatives. Covers web development, software engineering best practices, and hands-on tutorials for knowledge transfer sessions.",
+    "image": "/projects/e2e-docs.png",
+    "tags": ["Documentation", "Education", "Markdown"],
+    "techStack": ["Markdown", "GitHub Pages", "Jekyll"],
+    "category": "open-source",
+    "organization": "EndToEndLabCR",
+    "links": {
+      "github": "https://github.com/EndToEndLabCR/documentation-docs-markdown",
+      "documentation": "https://endtoendlabcr.github.io/documentation-docs-markdown/"
+    },
+    "featured": true,
+    "metrics": {
+      "contributors": 5
+    }
+  },
+  {
+    "id": "e2e-templates",
+    "title": "KT Session Templates",
+    "description": "Starter templates and boilerplate projects for Knowledge Transfer sessions covering React, TypeScript, and modern web development.",
+    "longDescription": "A collection of starter templates designed for EndToEndLabCR's Knowledge Transfer sessions. Each template provides a solid foundation for learning specific technologies with progressive complexity and real-world examples.",
+    "image": "/projects/e2e-templates.png",
+    "tags": ["Templates", "Education", "React", "TypeScript"],
+    "techStack": ["React", "TypeScript", "Vite", "CSS"],
+    "category": "open-source",
+    "organization": "EndToEndLabCR",
+    "links": {
+      "github": "https://github.com/EndToEndLabCR"
+    },
+    "featured": false,
+    "metrics": {
+      "contributors": 4
+    }
+  },
+  {
+    "id": "naranjo-freelance",
+    "title": "NaranjoSolutions Client Work",
+    "description": "Freelance software development projects including web applications, automation tools, and technical consulting.",
+    "longDescription": "Emerging freelance portfolio under NaranjoSolutions, delivering custom software solutions for clients across various industries. Focused on modern web technologies and clean, maintainable code.",
+    "image": "/projects/naranjo.png",
+    "tags": ["Freelance", "Web Development", "Consulting"],
+    "techStack": ["React", "TypeScript", "Node.js", "PostgreSQL"],
+    "category": "freelance",
+    "organization": "NaranjoSolutions",
+    "links": {
+      "github": "https://github.com/NaranjoSolutions"
+    },
+    "featured": false
+  }
+]

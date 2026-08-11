@@ -1,0 +1,24 @@
+import { useState, useEffect, useCallback } from 'react';
+
+type ThemeMode = 'light' | 'dark';
+
+const STORAGE_KEY = 'portfolio-theme';
+
+export function useTheme() {
+  const [mode, setMode] = useState<ThemeMode>(() => {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored === 'light' || stored === 'dark') return stored;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, mode);
+    document.documentElement.setAttribute('data-theme', mode);
+  }, [mode]);
+
+  const toggle = useCallback(() => {
+    setMode((prev) => (prev === 'light' ? 'dark' : 'light'));
+  }, []);
+
+  return { mode, toggle, isDark: mode === 'dark' };
+}

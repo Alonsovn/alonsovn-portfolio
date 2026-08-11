@@ -1,0 +1,60 @@
+.organizations {
+  padding: 6rem 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.card {
+  height: 100%;
+  border-top: 3px solid transparent;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.role {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.mission {
+  font-style: italic;
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent-color);
+}
+
+.focusAreas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .organizations {
+    padding: 4rem 1rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

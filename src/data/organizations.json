@@ -1,0 +1,38 @@
+[
+  {
+    "id": "endtoendlabcr",
+    "name": "EndToEndLabCR",
+    "role": "Founder",
+    "description": "A tech education organization dedicated to empowering software engineers through comprehensive documentation, hands-on knowledge transfer sessions, and real-world project practice.",
+    "mission": "To bridge the gap between theoretical knowledge and practical software engineering skills through structured learning and collaborative projects.",
+    "focusAreas": [
+      "Tech Documentation",
+      "Knowledge Transfer Sessions",
+      "Template Projects",
+      "Community Building",
+      "Real-world Practice"
+    ],
+    "links": {
+      "github": "https://github.com/EndToEndLabCR",
+      "documentation": "https://endtoendlabcr.github.io/documentation-docs-markdown/"
+    },
+    "color": "#1677ff"
+  },
+  {
+    "id": "naranjosolutions",
+    "name": "NaranjoSolutions",
+    "role": "Founder",
+    "description": "A freelance software development organization delivering custom web applications, automation tools, and technical consulting services to clients.",
+    "mission": "To provide high-quality, modern software solutions that help businesses and individuals achieve their goals through technology.",
+    "focusAreas": [
+      "Web Application Development",
+      "Technical Consulting",
+      "Custom Solutions",
+      "Freelance Services"
+    ],
+    "links": {
+      "github": "https://github.com/NaranjoSolutions"
+    },
+    "color": "#722ed1"
+  }
+]

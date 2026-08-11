@@ -1,0 +1,65 @@
+[
+  {
+    "id": "e2e-foundation",
+    "type": "organization",
+    "title": "Founded EndToEndLabCR",
+    "organization": "EndToEndLabCR",
+    "description": "Founded a tech education organization focused on knowledge transfer, documentation, and hands-on learning for software engineers.",
+    "date": "Founder",
+    "link": "https://github.com/EndToEndLabCR",
+    "highlights": [
+      "Built comprehensive documentation platform",
+      "Created template projects for KT sessions",
+      "Fostered community of learners and contributors"
+    ]
+  },
+  {
+    "id": "naranjo-foundation",
+    "type": "organization",
+    "title": "Founded NaranjoSolutions",
+    "organization": "NaranjoSolutions",
+    "description": "Established a freelance software development organization providing custom solutions and technical consulting.",
+    "date": "Founder",
+    "link": "https://github.com/NaranjoSolutions",
+    "highlights": [
+      "Delivering custom web applications",
+      "Technical consulting and architecture design",
+      "Building freelance portfolio"
+    ]
+  },
+  {
+    "id": "story-flow",
+    "type": "project",
+    "title": "Story Flow Engine",
+    "organization": "alonsovndev",
+    "description": "Released an open-source narrative flow engine for branching storylines and interactive storytelling.",
+    "date": "2024",
+    "link": "https://github.com/alonsovndev/story-flow-engine"
+  },
+  {
+    "id": "opencode",
+    "type": "project",
+    "title": "OpenCode Setup Toolkit",
+    "organization": "alonsovndev",
+    "description": "Created an AI coding assistant configuration toolkit with orchestration models, quality gates, and domain routing.",
+    "date": "2024",
+    "link": "https://github.com/alonsovndev/opencode-setup"
+  },
+  {
+    "id": "e2e-docs-launch",
+    "type": "project",
+    "title": "EndToEndLabCR Documentation Launch",
+    "organization": "EndToEndLabCR",
+    "description": "Launched comprehensive Markdown-based documentation platform for tech knowledge sharing.",
+    "date": "2024",
+    "link": "https://endtoendlabcr.github.io/documentation-docs-markdown/"
+  },
+  {
+    "id": "oss-journey",
+    "type": "open-source",
+    "title": "Open Source Journey Began",
+    "organization": "GitHub",
+    "description": "Started contributing to open source projects and building tools for the developer community.",
+    "date": "2019"
+  }
+]
