@@ -7,8 +7,8 @@
 .sectionTitle {
   text-align: center;
   margin-bottom: 3rem;
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-weight: 400;
 }
 
 .grid {
@@ -20,13 +20,13 @@
 
 .bio {
   font-size: 1.05rem;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 .highlights {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .highlightItem {
@@ -35,7 +35,8 @@
   gap: 1rem;
   padding: 1.25rem;
   border-radius: 12px;
-  background: var(--card-bg, rgba(0,0,0,0.02));
+  background: var(--ant-color-bg-container, rgba(0,0,0,0.02));
+  border: 1px solid var(--ant-color-border, rgba(0,0,0,0.06));
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -46,6 +47,7 @@
 
 .highlightIcon {
   font-size: 1.5rem;
+  color: #0d9488;
   flex-shrink: 0;
   margin-top: 2px;
 }

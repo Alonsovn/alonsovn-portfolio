@@ -20,7 +20,7 @@
   white-space: nowrap;
   display: flex;
   align-items: center;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
 }
 
 .nav {

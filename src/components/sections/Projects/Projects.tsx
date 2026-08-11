@@ -37,12 +37,6 @@ const filterToCategory: Record<string, string | null> = {
   Personal: 'personal',
 };
 
-const categoryColors: Record<Project['category'], string> = {
-  'open-source': 'green',
-  freelance: 'purple',
-  personal: 'blue',
-};
-
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState<string>('All');
 
@@ -88,8 +82,25 @@ export default function Projects() {
         {filtered.map((project) => (
           <motion.div key={project.id} variants={itemVariants}>
             <Card className={styles.card} hoverable>
+              {(project.metrics?.stars !== undefined || project.metrics?.contributors !== undefined) && (
+                <div className={styles.metrics}>
+                  {project.metrics?.stars !== undefined && (
+                    <span className={styles.metric}>
+                      <span className={styles.metricValue}>{project.metrics.stars}</span>
+                      <span className={styles.metricLabel}><StarOutlined /></span>
+                    </span>
+                  )}
+                  {project.metrics?.contributors !== undefined && (
+                    <span className={styles.metric}>
+                      <span className={styles.metricValue}>{project.metrics.contributors}</span>
+                      <span className={styles.metricLabel}><TeamOutlined /></span>
+                    </span>
+                  )}
+                </div>
+              )}
+
               <Space align="start" style={{ marginBottom: 4 }}>
-                <Text strong style={{ fontSize: 16 }}>
+                <Text strong style={{ fontSize: 16, fontFamily: 'var(--font-heading)' }}>
                   {project.title}
                 </Text>
                 {project.featured && (
@@ -108,35 +119,14 @@ export default function Projects() {
               </Paragraph>
 
               <div className={styles.tags}>
-                {project.tags.map((tag) => (
-                  <Tag key={tag} color={categoryColors[project.category]}>
-                    {tag}
-                  </Tag>
-                ))}
-              </div>
-
-              <div className={styles.tags}>
                 {project.techStack.map((tech) => (
-                  <Tag key={tech} color="blue">
+                  <Tag key={tech} color="default">
                     {tech}
                   </Tag>
                 ))}
               </div>
 
-              <div className={styles.footer} style={{ marginTop: 12 }}>
-                <div className={styles.metrics}>
-                  {project.metrics?.stars !== undefined && (
-                    <span>
-                      <StarOutlined /> {project.metrics.stars}
-                    </span>
-                  )}
-                  {project.metrics?.contributors !== undefined && (
-                    <span>
-                      <TeamOutlined /> {project.metrics.contributors}
-                    </span>
-                  )}
-                </div>
-
+              <div className={styles.footer}>
                 <Space size="small">
                   {project.links.github && (
                     <Button

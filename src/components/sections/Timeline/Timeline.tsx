@@ -66,7 +66,13 @@ export default function Timeline() {
           <motion.div key={exp.id} className={styles.item} variants={itemVariants}>
             <div className={styles.itemContent}>
               <div className={styles.itemHeader}>
-                <Text className={styles.itemDate}>{exp.date}</Text>
+                <span className={styles.itemDate}>
+                  <span
+                    className={styles.typeIndicator}
+                    style={{ backgroundColor: `var(--ant-color-${typeColorMap[exp.type]})` }}
+                  />
+                  {exp.date}
+                </span>
                 <Tag color={typeColorMap[exp.type]}>{typeLabelMap[exp.type]}</Tag>
               </div>
 

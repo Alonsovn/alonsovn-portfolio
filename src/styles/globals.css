@@ -7,6 +7,9 @@
 }
 
 html {
+  --font-heading: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
   color-scheme: light;
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
@@ -17,6 +20,9 @@ html[data-theme="dark"] {
   color-scheme: dark;
   --hero-bg-from: #0c0a09;
   --hero-bg-to: #1c1917;
+
+  /* Dark-mode perceptual type compensation */
+  letter-spacing: 0.005em;
 }
 
 body {

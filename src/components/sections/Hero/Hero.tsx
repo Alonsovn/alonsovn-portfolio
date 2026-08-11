@@ -42,45 +42,18 @@ export default function Hero() {
       <div className={styles.bgGradient} />
 
       <div className={styles.content}>
-        <motion.p className={styles.greeting} variants={itemVariants}>
-          Hello, I'm
-        </motion.p>
-
-        <motion.div
-          variants={itemVariants}
-          style={{
-            width: 56,
-            height: 56,
-            borderRadius: 14,
-            background: 'linear-gradient(135deg, #0d9488, #14b8a6)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            margin: '0 auto 1.5rem',
-            fontSize: '1.5rem',
-            fontWeight: 700,
-            color: '#fff',
-            fontFamily: "'Space Grotesk', sans-serif",
-          }}
-        >
-          A
-        </motion.div>
-
         <motion.h1 className={styles.headline} variants={itemVariants}>
-          <span className={styles.highlight}>Alonso</span>
+          Alonso
         </motion.h1>
 
-        <motion.div variants={itemVariants}>
-          <p style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', fontWeight: 500, opacity: 0.75, marginBottom: '0.5rem' }}>
-            Full-Stack Engineer | Open Source Contributor | Tech Educator
-          </p>
+        <motion.div variants={itemVariants} className={styles.tagline}>
+          <p>Full-Stack Engineer &mdash; Open Source Contributor &mdash; Tech Educator</p>
         </motion.div>
 
         <motion.div variants={itemVariants}>
           <Text type="secondary" className={styles.subtitle}>
-            Building open source tools, leading tech education at EndToEndLabCR, and crafting
-            freelance solutions through NaranjoSolutions. Passionate about clean architecture,
-            developer experience, and knowledge sharing.
+            Founder of EndToEndLabCR and NaranjoSolutions. Building tools, teaching engineers,
+            and shipping open source that makes other developers faster.
           </Text>
         </motion.div>
 
@@ -106,7 +79,7 @@ export default function Hero() {
             href="/resume.pdf"
             download
           >
-            Download Resume
+            Resume
           </Button>
         </motion.div>
 

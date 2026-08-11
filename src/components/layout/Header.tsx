@@ -80,7 +80,7 @@ export default function Header({ isDark, onThemeToggle }: HeaderProps) {
           fontWeight: 700,
           fontSize: '0.8rem',
           marginRight: 8,
-          fontFamily: "'Space Grotesk', sans-serif",
+          fontFamily: "var(--font-heading)",
         }}>A</span>
         Alonso
       </span>
@@ -131,6 +131,12 @@ export default function Header({ isDark, onThemeToggle }: HeaderProps) {
       </nav>
 
       <div className={styles.mobileMenu}>
+        <Button
+          type="text"
+          icon={isDark ? <SunOutlined /> : <MoonOutlined />}
+          onClick={onThemeToggle}
+          aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+        />
         <Button
           type="text"
           icon={<MenuOutlined />}
