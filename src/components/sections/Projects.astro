@@ -1,0 +1,242 @@
+---
+import Icon from '@/components/ui/Icon.astro';
+import { sectionIds } from '@/lib/sections';
+import type { Project } from '@/types';
+import projectsData from '@/data/projects.json';
+
+const projects = projectsData as Project[];
+
+const categoryLabels: Record<Project['category'], string> = {
+  'open-source': 'Open Source',
+  freelance: 'Freelance',
+  personal: 'Personal',
+};
+
+const filterOptions = [
+  { value: 'all', label: 'All' },
+  ...(Object.keys(categoryLabels) as Project['category'][])
+    .filter((category) => projects.some((project) => project.category === category))
+    .map((category) => ({ value: category, label: categoryLabels[category] })),
+];
+---
+
+<section id={sectionIds.projects} class="projects" data-filter-group>
+  <h2 class="section-title title reveal">Featured Projects</h2>
+
+  <div class="filters reveal" style="--reveal-index: 1">
+    <div class="segmented" role="group" aria-label="Filter projects by category">
+      {
+        filterOptions.map((option) => (
+          <button
+            type="button"
+            class="segmented__option"
+            aria-pressed={option.value === 'all' ? 'true' : 'false'}
+            data-filter-value={option.value}
+          >
+            {option.label}
+          </button>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="grid">
+    {
+      projects.map((project, index) => (
+        <div class="reveal" style={`--reveal-index: ${index}`} data-filter-item data-category={project.category}>
+          <article class="card card--hoverable projectCard">
+            {(project.metrics?.stars !== undefined || project.metrics?.contributors !== undefined) && (
+              <div class="metrics">
+                {project.metrics?.stars !== undefined && (
+                  <span class="metric">
+                    <span class="metricValue">{project.metrics.stars}</span>
+                    <span class="metricLabel">
+                      <Icon name="star" size={12} />
+                      <span class="sr-only">stars</span>
+                    </span>
+                  </span>
+                )}
+                {project.metrics?.contributors !== undefined && (
+                  <span class="metric">
+                    <span class="metricValue">{project.metrics.contributors}</span>
+                    <span class="metricLabel">
+                      <Icon name="team" size={12} />
+                      <span class="sr-only">contributors</span>
+                    </span>
+                  </span>
+                )}
+              </div>
+            )}
+
+            <div class="heading">
+              <h3 class="projectTitle">{project.title}</h3>
+              {project.featured && <span class="tag tag--tinted featured" style="--tag-color: #d48806">Featured</span>}
+            </div>
+
+            <p class="description text-secondary">{project.description}</p>
+
+            <ul class="tags">
+              {project.techStack.map((tech) => <li class="tag">{tech}</li>)}
+            </ul>
+
+            <div class="footer">
+              {project.links.github && (
+                <a
+                  class="btn btn--link btn--sm btn--icon"
+                  href={project.links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${project.title} on GitHub`}
+                >
+                  <Icon name="github" />
+                </a>
+              )}
+              {project.links.demo && (
+                <a
+                  class="btn btn--link btn--sm"
+                  href={project.links.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon name="link" />
+                  Demo<span class="sr-only"> for {project.title}</span>
+                </a>
+              )}
+              {project.links.documentation && !project.links.demo && (
+                <a
+                  class="btn btn--link btn--sm"
+                  href={project.links.documentation}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon name="link" />
+                  Docs<span class="sr-only"> for {project.title}</span>
+                </a>
+              )}
+            </div>
+          </article>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .projects {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem;
+  }
+
+  .title {
+    margin-bottom: 3rem;
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .grid > div {
+    display: flex;
+  }
+
+  .projectCard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .projectCard:hover {
+    transform: translateY(-4px);
+  }
+
+  .metrics {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+  }
+
+  .metricValue {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--color-primary);
+  }
+
+  .metricLabel {
+    display: inline-flex;
+    opacity: 0.5;
+  }
+
+  .heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .projectTitle {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .featured {
+    font-size: 11px;
+    line-height: 18px;
+  }
+
+  .description {
+    display: -webkit-box;
+    margin: 8px 0 12px;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+    list-style: none;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-border-subtle);
+  }
+
+  @media (max-width: 768px) {
+    .projects {
+      padding: 4rem 1rem;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

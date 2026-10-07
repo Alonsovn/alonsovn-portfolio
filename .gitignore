@@ -36,10 +36,9 @@ pnpm-debug.log*
 # Testing
 coverage/
 
-# Vite
-vite.config.ts.timestamp-*
-vite.config.mjs.timestamp-*
-
 # Specs — exclude everything except .gitkeep
 /specs/*
 !/specs/.gitkeep
+
+# Astro
+.astro/
