@@ -1,5 +1,5 @@
 export const site = {
-  url: 'https://alonsovn.dev',
+  url: 'https://alonsovndev.com',
   name: 'Alonso',
   locale: 'en_US',
   fullName: 'Alonso Villanueva Naranjo',

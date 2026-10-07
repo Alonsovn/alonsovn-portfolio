@@ -29,9 +29,9 @@ A competitor's site couldn't truthfully copy this because the founder/educator e
 - Viewed by recruiters scanning many portfolios quickly — must communicate depth within seconds
 - Viewed by engineers following links from GitHub, documentation, or community references
 - Viewed by potential freelance clients who may spend more time evaluating fit
-- Serves as permanent professional identity at alonsovn.dev
+- Serves as permanent professional identity at alonsovndev.com
 - Content is static but should feel alive — real metrics, working links, current information
-- Deployed on Vercel
+- Deployed on Cloudflare Workers (see docs/deployment.md)
 
 ## Capabilities and Constraints
 
@@ -49,7 +49,7 @@ A competitor's site couldn't truthfully copy this because the founder/educator e
 - All factual content is locked: organization names, project data, experience entries, skills must remain accurate
 - Dark/light theme toggle must remain
 - Single-page scroll architecture must remain
-- Domain: alonsovn.dev
+- Domain: alonsovndev.com
 - Resume: /resume.pdf
 
 **Technical stack (as built):**
@@ -64,7 +64,7 @@ A competitor's site couldn't truthfully copy this because the founder/educator e
 - **GitHub:** Alonsovn
 - **Organizations:** EndToEndLabCR (tech education), NaranjoSolutions (freelance), alonsovndev (personal open source)
 - **Voice:** Professional, direct, community-oriented. Not corporate — human and approachable.
-- **Domain:** alonsovn.dev
+- **Domain:** alonsovndev.com
 
 ## Evidence on Hand
 

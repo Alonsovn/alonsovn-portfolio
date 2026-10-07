@@ -1,4 +1,4 @@
-# alonsovn.dev
+# alonsovndev.com
 
 Personal portfolio built with [Astro](https://astro.build) and TypeScript. Every section is rendered to static HTML at build time; the only client JavaScript is a handful of small scripts in `src/scripts/` (theme toggle, scroll-spy, filters, mobile menu, scroll-to-top, scroll reveal).
 
@@ -26,6 +26,10 @@ src/
 ├── styles/globals.css       # Design tokens (light/dark) and shared UI primitives
 └── lib/, types/             # Shared constants and TypeScript types
 ```
+
+## Deployment
+
+Deployed as a Cloudflare Worker at `https://alonsovndev.com` (`www` redirects to the root domain). Domain, redirect rule, canonical-URL settings and verification steps are in [docs/deployment.md](docs/deployment.md).
 
 ## SEO
 
