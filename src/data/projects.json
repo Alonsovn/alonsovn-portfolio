@@ -28,6 +28,21 @@
     "featured": true
   },
   {
+    "id": "template-docs",
+    "title": "Template Docs",
+    "description": "Docusaurus documentation template with auto-generated sidebars, GitHub Pages deployment, and AI-guided section authoring.",
+    "longDescription": "A starter template for project documentation built with Docusaurus. Ships with section scaffolding for context, requirements, planning, architecture, decisions, and prototypes, plus Claude Code, opencode, and GitHub Copilot integrations that populate each section through guided interviews.",
+    "tags": ["Documentation", "Templates", "AI Tools"],
+    "techStack": ["Docusaurus", "TypeScript", "GitHub Actions"],
+    "category": "open-source",
+    "organization": "alonsovndev",
+    "links": {
+      "github": "https://github.com/alonsovndev/template-docs",
+      "documentation": "https://alonsovndev.github.io/template-docs/"
+    },
+    "featured": false
+  },
+  {
     "id": "e2e-docs",
     "title": "EndToEndLabCR Documentation",
     "description": "Comprehensive tech documentation platform for knowledge transfer and learning, built with Markdown and modern static site generation.",
