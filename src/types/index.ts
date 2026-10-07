@@ -3,7 +3,6 @@ export interface Project {
   title: string;
   description: string;
   longDescription?: string;
-  image: string;
   tags: string[];
   techStack: string[];
   category: 'open-source' | 'freelance' | 'personal';
@@ -56,10 +55,4 @@ export interface Organization {
   };
   projects?: string[];
   color: string;
-}
-
-export interface SocialLink {
-  name: string;
-  url: string;
-  icon: string;
 }

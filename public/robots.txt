@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alonsovn.dev/sitemap.xml
+Sitemap: https://alonsovn.dev/sitemap-index.xml

@@ -1,0 +1,184 @@
+---
+import Icon from '@/components/ui/Icon.astro';
+import { sectionIds } from '@/lib/sections';
+import type { Experience } from '@/types';
+import expData from '@/data/experience.json';
+
+const experiences = expData as Experience[];
+
+const typeColors: Record<Experience['type'], string> = {
+  'open-source': '#52c41a',
+  organization: '#1677ff',
+  project: '#722ed1',
+  work: '#f5222d',
+  education: '#fa8c16',
+};
+
+const typeLabels: Record<Experience['type'], string> = {
+  'open-source': 'Open Source',
+  organization: 'Organization',
+  project: 'Project',
+  work: 'Work',
+  education: 'Education',
+};
+---
+
+<section id={sectionIds.experience} class="timeline">
+  <h2 class="section-title title reveal">Experience</h2>
+
+  <ol class="items">
+    {
+      experiences.map((experience, index) => (
+        <li class="item reveal" style={`--reveal-index: ${Math.min(index, 4) + 1}`}>
+          <article class="itemContent">
+            <div class="itemHeader">
+              <span class="itemDate">
+                <span class="typeIndicator" style={`background-color: ${typeColors[experience.type]}`} />
+                {experience.date}
+              </span>
+              <span class="tag tag--tinted" style={`--tag-color: ${typeColors[experience.type]}`}>
+                {typeLabels[experience.type]}
+              </span>
+            </div>
+
+            <h3 class="itemTitle">{experience.title}</h3>
+
+            <div class="itemOrg">{experience.organization}</div>
+
+            <p class="itemDesc text-secondary">{experience.description}</p>
+
+            {experience.highlights && experience.highlights.length > 0 && (
+              <ul class="highlights">
+                {experience.highlights.map((highlight) => (
+                  <li class="highlight text-secondary">
+                    <Icon name="caret-right" size={8} class="highlightDot" />
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {experience.link && (
+              <a class="itemLink" href={experience.link} target="_blank" rel="noopener noreferrer">
+                <Icon name="link" size={14} />
+                View
+                <span class="sr-only">{experience.title}</span>
+              </a>
+            )}
+          </article>
+        </li>
+      ))
+    }
+  </ol>
+</section>
+
+<style>
+  .timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem;
+  }
+
+  .title {
+    margin-bottom: 3rem;
+  }
+
+  .items {
+    list-style: none;
+  }
+
+  .item {
+    margin-bottom: 2rem;
+  }
+
+  .itemContent {
+    position: relative;
+    padding: 1.5rem;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 12px;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .itemContent:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  .itemHeader {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .itemDate {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0.7;
+  }
+
+  .typeIndicator {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  .itemTitle {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .itemOrg {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    opacity: 0.8;
+  }
+
+  .itemDesc {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+
+  .highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    list-style: none;
+  }
+
+  .highlight {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .highlight :global(.highlightDot) {
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+    fill: currentColor;
+  }
+
+  .itemLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .timeline {
+      padding: 4rem 1rem;
+    }
+  }
+</style>

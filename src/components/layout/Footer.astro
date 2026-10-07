@@ -1,0 +1,55 @@
+---
+import Icon from '@/components/ui/Icon.astro';
+import { site } from '@/data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="socials">
+    <a
+      class="btn btn--text btn--icon"
+      href={site.socials.github}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="GitHub profile"
+    >
+      <Icon name="github" />
+    </a>
+    <a
+      class="btn btn--text btn--icon"
+      href={site.socials.linkedin}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="LinkedIn profile"
+    >
+      <Icon name="linkedin" />
+    </a>
+  </div>
+  <p class="text-secondary">
+    Built with <Icon name="heart" size={14} class="heart" /> using Astro and TypeScript
+  </p>
+  <p class="text-secondary">&copy; {year} Alonso. All rights reserved.</p>
+</footer>
+
+<style>
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .socials {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .footer :global(.heart) {
+    vertical-align: -2px;
+    color: var(--color-primary);
+    fill: currentColor;
+  }
+</style>

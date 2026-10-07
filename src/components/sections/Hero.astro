@@ -1,0 +1,160 @@
+---
+import Icon from '@/components/ui/Icon.astro';
+import { site } from '@/data/site';
+import { sectionIds } from '@/lib/sections';
+---
+
+<section id={sectionIds.hero} class="hero">
+  <div class="bgGradient"></div>
+
+  <div class="content">
+    <h1 class="headline" style="--enter-index: 0">Alonso</h1>
+
+    <p class="tagline" style="--enter-index: 1">
+      Senior Software Engineer &mdash; Team Lead &mdash; Open Source Contributor
+    </p>
+
+    <p class="subtitle text-secondary" style="--enter-index: 2">
+      10+ years building enterprise applications, integrations and cloud data platforms, 8+ of them at
+      Cargill. Java, Spring Boot, Python, React and TypeScript on AWS, plus open source developer tooling.
+    </p>
+
+    <div class="actions" style="--enter-index: 3">
+      <a class="btn btn--primary btn--lg" href={`#${sectionIds.projects}`}>View Projects</a>
+      <a class="btn btn--default btn--lg" href={`#${sectionIds.contact}`}>Contact Me</a>
+      <a class="btn btn--link btn--lg" href="/resume.pdf" download>
+        <Icon name="download" />
+        Resume
+      </a>
+    </div>
+
+    <div class="socialLinks" style="--enter-index: 4">
+      <a
+        class="btn btn--text btn--lg btn--icon"
+        href={site.socials.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub profile"
+      >
+        <Icon name="github" size={20} />
+      </a>
+      <a
+        class="btn btn--text btn--lg btn--icon"
+        href={site.socials.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn profile"
+      >
+        <Icon name="linkedin" size={20} />
+      </a>
+    </div>
+  </div>
+
+  <a class="scrollIndicator" href={`#${sectionIds.about}`} aria-label="Scroll to About section">
+    <Icon name="arrow-down" size={20} />
+  </a>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--hero-bg-from) 0%, var(--hero-bg-to) 100%);
+  }
+
+  .bgGradient {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 80% 10%, rgba(13, 148, 136, 0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 90%, rgba(245, 158, 11, 0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .content {
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .content > * {
+    animation: enter 0.6s ease-out both;
+    animation-delay: calc(var(--enter-index, 0) * 0.15s);
+  }
+
+  .headline {
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--color-primary);
+  }
+
+  .tagline {
+    margin-bottom: 2rem;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 500;
+    opacity: 0.75;
+  }
+
+  .subtitle {
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    line-height: 1.65;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .socialLinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 3rem;
+  }
+
+  .scrollIndicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--color-text);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes enter {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding-top: 5rem;
+    }
+  }
+</style>

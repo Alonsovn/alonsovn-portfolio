@@ -1,0 +1,140 @@
+---
+import Icon from '@/components/ui/Icon.astro';
+import type { IconName } from '@/components/ui/icons';
+import { sectionIds } from '@/lib/sections';
+
+interface Highlight {
+  icon: IconName;
+  title: string;
+  description: string;
+}
+
+const highlights: readonly Highlight[] = [
+  {
+    icon: 'code',
+    title: 'Enterprise Engineering',
+    description: '8+ years delivering applications, integrations and cloud data platforms at Cargill',
+  },
+  {
+    icon: 'team',
+    title: 'Technical Leadership',
+    description: 'Team lead providing architecture direction, code reviews and mentoring',
+  },
+  {
+    icon: 'rocket',
+    title: 'Open Source & AI',
+    description: 'Building developer-productivity tools and AI-assisted engineering workflows',
+  },
+];
+---
+
+<section id={sectionIds.about} class="about">
+  <h2 class="section-title title reveal">About Me</h2>
+
+  <div class="grid">
+    <p class="bio reveal" style="--reveal-index: 1">
+      I'm a senior software engineer and team lead with 10+ years of experience, including 8+ years at
+      Cargill delivering enterprise applications, integrations, backend services and cloud data platforms.
+      I combine technical direction, architecture, code reviews and mentoring with hands-on development in
+      Java, Spring Boot, Python, React and TypeScript. I also build open source
+      developer-productivity tools, lead an open source engineering community, and I'm pursuing a Master's
+      in AI Development while using AI agents and MCP to support structured development workflows.
+    </p>
+
+    <ul class="highlights">
+      {
+        highlights.map((highlight, index) => (
+          <li class="reveal" style={`--reveal-index: ${index + 2}`}>
+            <div class="highlightItem">
+              <span class="highlightIcon">
+                <Icon name={highlight.icon} size={24} />
+              </span>
+              <div>
+                <div class="highlightTitle">{highlight.title}</div>
+                <div class="highlightDesc">{highlight.description}</div>
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .about {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem;
+  }
+
+  .title {
+    margin-bottom: 3rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .bio {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    list-style: none;
+  }
+
+  .highlightItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: var(--color-bg-container);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .highlightItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .highlightIcon {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--color-primary);
+  }
+
+  .highlightTitle {
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .highlightDesc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.75;
+  }
+
+  @media (max-width: 768px) {
+    .about {
+      padding: 4rem 1rem;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

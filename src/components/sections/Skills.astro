@@ -1,0 +1,184 @@
+---
+import { sectionIds } from '@/lib/sections';
+import { skillCategoryColors, skillCategoryLabels } from '@/lib/utils';
+import type { Skill, SkillCategory } from '@/types';
+import skillsData from '@/data/skills.json';
+
+const categories = Object.keys(skillCategoryLabels) as SkillCategory[];
+
+const proficiencyColors: Record<Skill['proficiency'], string | null> = {
+  expert: '#0d9488',
+  advanced: '#059669',
+  intermediate: '#d97706',
+  beginner: null,
+};
+
+const proficiencyWeights: Record<Skill['proficiency'], number> = {
+  expert: 600,
+  advanced: 500,
+  intermediate: 400,
+  beginner: 400,
+};
+
+const legendLevels = ['expert', 'advanced', 'intermediate'] as const;
+
+const skillsByCategory = categories
+  .map((category) => ({
+    category,
+    skills: (skillsData as Skill[]).filter((skill) => skill.category === category),
+  }))
+  .filter(({ skills }) => skills.length > 0);
+
+const filterOptions = [
+  { value: 'all', label: 'All' },
+  ...skillsByCategory.map(({ category }) => ({ value: category, label: skillCategoryLabels[category] })),
+];
+---
+
+<section id={sectionIds.skills} class="skills" data-filter-group>
+  <h2 class="section-title title reveal">Skills &amp; Technologies</h2>
+
+  <div class="filterBar reveal" style="--reveal-index: 1">
+    <div class="segmented" role="group" aria-label="Filter skills by category">
+      {
+        filterOptions.map((option) => (
+          <button
+            type="button"
+            class="segmented__option"
+            aria-pressed={option.value === 'all' ? 'true' : 'false'}
+            data-filter-value={option.value}
+          >
+            {option.label}
+          </button>
+        ))
+      }
+    </div>
+  </div>
+
+  <ul class="legend reveal" style="--reveal-index: 2">
+    {
+      legendLevels.map((level) => (
+        <li class="legendItem">
+          <span class="legendDot tag--solid" style={`--tag-color: ${proficiencyColors[level]}`} />
+          {level.charAt(0).toUpperCase() + level.slice(1)}
+        </li>
+      ))
+    }
+  </ul>
+
+  {
+    skillsByCategory.map(({ category, skills }, index) => (
+      <div
+        class="categorySection reveal"
+        style={`--reveal-index: ${index}`}
+        data-filter-item
+        data-category={category}
+      >
+        <h3 class="categoryTitle">
+          <span class="categoryDot" style={`background-color: ${skillCategoryColors[category]}`} />
+          {skillCategoryLabels[category]}
+        </h3>
+
+        <ul class="skillGrid">
+          {skills.map((skill) => {
+            const color = proficiencyColors[skill.proficiency];
+            return (
+              <li
+                class:list={['tag', 'skillTag', color && 'tag--solid']}
+                style={`font-weight: ${proficiencyWeights[skill.proficiency]}${color ? `; --tag-color: ${color}` : ''}`}
+              >
+                {skill.name}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    ))
+  }
+</section>
+
+<style>
+  .skills {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem;
+  }
+
+  .title {
+    margin-bottom: 2rem;
+  }
+
+  .filterBar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.8rem;
+    list-style: none;
+    opacity: 0.7;
+  }
+
+  .legendItem {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .legendDot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+  }
+
+  .categorySection {
+    margin-bottom: 1.5rem;
+  }
+
+  .categoryTitle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .categoryDot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  .skillGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.6rem;
+    list-style: none;
+  }
+
+  .skillTag {
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .skills {
+      padding: 4rem 1rem;
+    }
+
+    .skillGrid {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+  }
+</style>

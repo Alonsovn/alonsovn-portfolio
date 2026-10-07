@@ -2,8 +2,8 @@
   {
     "id": "endtoendlabcr",
     "name": "EndToEndLabCR",
-    "role": "Founder",
-    "description": "A tech education organization dedicated to empowering software engineers through comprehensive documentation, hands-on knowledge transfer sessions, and real-world project practice.",
+    "role": "Lead",
+    "description": "An open-source software engineering community focused on practical development, collaboration and knowledge sharing, with reusable project templates, documentation structures and engineering workflows.",
     "mission": "To bridge the gap between theoretical knowledge and practical software engineering skills through structured learning and collaborative projects.",
     "focusAreas": [
       "Tech Documentation",

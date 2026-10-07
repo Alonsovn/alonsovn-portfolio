@@ -1,0 +1,269 @@
+---
+import Icon from '@/components/ui/Icon.astro';
+import { site } from '@/data/site';
+import { navItems, sectionIds } from '@/lib/sections';
+---
+
+<header class="header">
+  <a class="logo" href={`#${sectionIds.hero}`}>
+    <span class="logoMark" aria-hidden="true">A</span>
+    Alonso
+  </a>
+
+  <a href="#main-content" class="skipLink">Skip to main content</a>
+
+  <nav class="nav" aria-label="Primary">
+    {
+      navItems.map((item) => (
+        <a class="btn btn--text navLink" href={`#${item.id}`} data-nav-link>
+          {item.label}
+        </a>
+      ))
+    }
+    <a
+      class="btn btn--text btn--icon"
+      href={site.socials.github}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="GitHub profile"
+    >
+      <Icon name="github" />
+    </a>
+    <a
+      class="btn btn--text btn--icon"
+      href={site.socials.linkedin}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="LinkedIn profile"
+    >
+      <Icon name="linkedin" />
+    </a>
+    <button
+      type="button"
+      class="btn btn--text btn--icon themeToggle"
+      aria-label="Dark mode"
+      aria-pressed="false"
+      data-theme-toggle
+    >
+      <Icon name="moon" class="themeMoon" />
+      <Icon name="sun" class="themeSun" />
+    </button>
+  </nav>
+
+  <div class="mobileMenu">
+    <button
+      type="button"
+      class="btn btn--text btn--icon themeToggle"
+      aria-label="Dark mode"
+      aria-pressed="false"
+      data-theme-toggle
+    >
+      <Icon name="moon" class="themeMoon" />
+      <Icon name="sun" class="themeSun" />
+    </button>
+    <button
+      type="button"
+      class="btn btn--text btn--icon"
+      aria-label="Open navigation menu"
+      data-mobile-menu-open
+    >
+      <Icon name="menu" />
+    </button>
+  </div>
+
+  <dialog class="drawer" data-mobile-menu aria-label="Navigation">
+    <div class="drawerHeader">
+      <span class="drawerTitle">Navigation</span>
+      <button
+        type="button"
+        class="btn btn--text btn--icon btn--sm"
+        aria-label="Close navigation menu"
+        data-mobile-menu-close
+      >
+        <Icon name="close" size={16} />
+      </button>
+    </div>
+    <div class="drawerBody">
+      {
+        navItems.map((item) => (
+          <a class="btn btn--text drawerLink" href={`#${item.id}`}>
+            {item.label}
+          </a>
+        ))
+      }
+      <button type="button" class="btn btn--text drawerLink themeToggle" data-theme-toggle>
+        <Icon name="moon" class="themeMoon" />
+        <Icon name="sun" class="themeSun" />
+        <span class="themeLabel"></span>
+      </button>
+    </div>
+  </dialog>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 64px;
+    background: var(--color-bg-header);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+    transition:
+      background-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+    color: var(--color-text);
+  }
+
+  .logo:hover {
+    color: var(--color-text);
+  }
+
+  .logoMark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #0d9488, #14b8a6);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .navLink {
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  .navLink[aria-current='location'] {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .skipLink {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 1001;
+    padding: 0.5rem 1rem;
+    border-radius: 0 0 8px 8px;
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: top 0.2s ease;
+  }
+
+  .skipLink:focus-visible {
+    top: 0;
+    color: var(--color-on-primary);
+  }
+
+  .themeToggle :global(.themeSun) {
+    display: none;
+  }
+
+  :global(html[data-theme='dark']) .themeToggle :global(.themeMoon) {
+    display: none;
+  }
+
+  :global(html[data-theme='dark']) .themeToggle :global(.themeSun) {
+    display: inline;
+  }
+
+  .themeLabel::after {
+    content: 'Dark Mode';
+  }
+
+  :global(html[data-theme='dark']) .themeLabel::after {
+    content: 'Light Mode';
+  }
+
+  .mobileMenu {
+    display: none;
+    align-items: center;
+  }
+
+  .drawer {
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: min(378px, 100vw);
+    height: 100dvh;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: var(--color-bg-container);
+    color: var(--color-text);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .drawer::backdrop {
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  .drawerHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .drawerTitle {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .drawerBody {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .drawerLink {
+    justify-content: flex-start;
+    height: 44px;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      padding: 0 1rem;
+    }
+
+    .nav {
+      display: none;
+    }
+
+    .mobileMenu {
+      display: flex;
+    }
+  }
+</style>

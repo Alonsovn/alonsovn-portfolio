@@ -1,0 +1,102 @@
+---
+import Icon from '@/components/ui/Icon.astro';
+import { sectionIds } from '@/lib/sections';
+import type { Organization } from '@/types';
+import orgsData from '@/data/organizations.json';
+
+const organizations = orgsData as Organization[];
+---
+
+<section id={sectionIds.organizations} class="organizations">
+  <h2 class="title reveal">Side Ventures</h2>
+
+  <ul class="grid">
+    {
+      organizations.map((org, index) => (
+        <li class="reveal" style={`--reveal-index: ${index + 1}`}>
+          <article class="card orgCard" style={`border-top-color: ${org.color}`}>
+            <div class="header">
+              <h3 class="orgName">{org.name}</h3>
+              <span class="tag tag--solid" style={`--tag-color: ${org.color}`}>{org.role}</span>
+            </div>
+            <p class="description text-secondary">{org.description}</p>
+            <a
+              class="btn btn--link btn--sm"
+              href={org.links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon name="github" />
+              GitHub<span class="sr-only"> for {org.name}</span>
+            </a>
+          </article>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .organizations {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+
+  .title {
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    list-style: none;
+  }
+
+  .grid > li {
+    display: flex;
+  }
+
+  .orgCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 1.25rem;
+    border-top: 3px solid transparent;
+  }
+
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .orgName {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .description {
+    flex: 1;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .organizations {
+      padding: 2.5rem 1rem;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
