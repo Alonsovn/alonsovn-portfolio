@@ -37,8 +37,8 @@
     "category": "open-source",
     "organization": "EndToEndLabCR",
     "links": {
-      "github": "https://github.com/EndToEndLabCR/documentation-docs-markdown",
-      "documentation": "https://endtoendlabcr.github.io/documentation-docs-markdown/"
+      "github": "https://github.com/EndToEndLabCR/endtoendlabcr-docs",
+      "documentation": "https://endtoendlabcr.github.io/endtoendlabcr-docs/"
     },
     "featured": false
   },
