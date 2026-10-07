@@ -56,6 +56,27 @@ Examples:
 | `www.alonsovndev.com/projects` | `alonsovndev.com/projects` |
 | `www.alonsovndev.com/projects?id=123` | `alonsovndev.com/projects?id=123` |
 
+### HTTPS redirect
+
+SSL/TLS → Edge Certificates → **Always Use HTTPS** is enabled, so `http://alonsovndev.com/` returns a `301` to the `https://` URL. Keep it on: the `Strict-Transport-Security` header below only protects visitors who reach the site over HTTPS first.
+
+## Security headers
+
+Headers are defined in the repo, in `public/_headers`. Astro copies the file to `dist/`, and Cloudflare Workers static assets applies it to every path (`/*`).
+
+| Header | Purpose |
+| --- | --- |
+| `Strict-Transport-Security` | Forces HTTPS for one year. No `includeSubDomains` or `preload` on purpose. |
+| `Content-Security-Policy` | Allows only same-origin assets, inline scripts and styles, and the Cloudflare Web Analytics beacon. |
+| `X-Content-Type-Options` | `nosniff` |
+| `X-Frame-Options` | `DENY`, alongside CSP `frame-ancestors 'none'` |
+| `Referrer-Policy` | `strict-origin-when-cross-origin` |
+| `Permissions-Policy` | Disables camera, microphone, geolocation and FLoC |
+
+`'unsafe-inline'` is required in `script-src` and `style-src` because the theme bootstrap script, the bundled module script and Astro's scoped styles are inlined in the HTML.
+
+When adding a third-party script, font host, image host or embed, update the CSP in `public/_headers` in the same change. The Cloudflare beacon is injected at the edge and is not in `dist/`, so a local build cannot show a CSP violation for it. Check the browser console on the deployed site.
+
 ## Canonical domain in the code
 
 The root domain is the only canonical host. It is set in three places, and all three must stay in sync:
@@ -93,13 +114,19 @@ After deploy:
 curl -sI https://www.alonsovndev.com/projects?id=123   # 301, Location: https://alonsovndev.com/projects?id=123
 curl -s  https://alonsovndev.com/robots.txt             # Sitemap: https://alonsovndev.com/sitemap-index.xml
 curl -sI https://alonsovndev.com/sitemap-index.xml      # 200 and an XML content type
+curl -sI http://alonsovndev.com/ | head -1              # 301 (Always Use HTTPS)
+curl -sI https://alonsovndev.com/ | grep -iE "strict-transport|content-security|x-frame|x-content-type|referrer-policy|permissions-policy"   # all six present
 ```
+
+Then open the deployed site with DevTools open and confirm the console has no `Refused to load` CSP errors.
 
 ## Google Search Console
 
 1. Add `alonsovndev.com` as a **Domain** property. Verify with the DNS TXT record in Cloudflare DNS.
 2. Submit `https://alonsovndev.com/sitemap-index.xml`.
-3. Optionally inspect `https://alonsovndev.com/` and request indexing.
+3. Inspect `https://alonsovndev.com/` and click **Request indexing** after changes to the title, headings or structured data, so Google recrawls the page.
+
+Googlebot reports the fonts and the Cloudflare beacon as "couldn't be loaded" under Page resources. This is normal and does not affect indexing.
 
 ## Notes and open items
 

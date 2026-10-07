@@ -32,5 +32,6 @@ export const site = {
   },
   ossProfile: 'https://github.com/alonsovndev',
   countryCode: 'CR',
+  alumniOf: 'Universidad Nacional',
   themeColor: { light: '#fafaf9', dark: '#0c0a09' },
 } as const;

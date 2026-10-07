@@ -31,6 +31,11 @@ const structuredData = [
     image: ogImageUrl,
     jobTitle: site.jobTitle,
     address: { '@type': 'PostalAddress', addressCountry: site.countryCode },
+    alumniOf: {
+      '@type': 'CollegeOrUniversity',
+      name: site.alumniOf,
+      address: { '@type': 'PostalAddress', addressCountry: site.countryCode },
+    },
     sameAs,
     knowsAbout: site.knowsAbout,
   },
