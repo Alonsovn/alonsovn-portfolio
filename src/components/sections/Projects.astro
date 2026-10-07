@@ -52,6 +52,19 @@ const filterOptions = [
 
             <p class="description text-secondary">{project.description}</p>
 
+            {project.problem && project.built && project.decisions && project.role && (
+              <dl class="caseStudy">
+                <dt>Problem</dt>
+                <dd>{project.problem}</dd>
+                <dt>Built</dt>
+                <dd>{project.built}</dd>
+                <dt>Decisions</dt>
+                <dd>{project.decisions}</dd>
+                <dt>Role</dt>
+                <dd>{project.role}</dd>
+              </dl>
+            )}
+
             <ul class="tags">
               {project.techStack.map((tech) => <li class="tag">{tech}</li>)}
             </ul>
@@ -162,6 +175,22 @@ const filterOptions = [
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     line-clamp: 3;
+  }
+
+  .caseStudy {
+    margin-bottom: 12px;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .caseStudy dt {
+    margin-top: 6px;
+    font-weight: 600;
+  }
+
+  .caseStudy dd {
+    margin: 0;
+    opacity: 0.8;
   }
 
   .tags {

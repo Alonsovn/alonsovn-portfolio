@@ -8,93 +8,62 @@ web
 
 ## Users
 
-Three equally important audiences, all served from the same surface:
+Three audiences, all served from the same surface:
 
-- **Recruiters & hiring managers** — scanning portfolios quickly for engineering depth, leadership evidence, and cultural fit. They look for impact metrics, team scale, and career trajectory.
-- **Engineers seeking guidance** — evaluating open source contributions, educational resources, and mentorship availability. They care about real code, documentation quality, and the person's teaching ability.
-- **Freelance clients** — assessing technical capability, reliability, and availability for paid projects. They need to trust that this person can deliver production-quality work.
+- **Recruiters & hiring managers** scanning quickly for engineering depth, technical leadership, and impact.
+- **Engineers** evaluating open-source work, architecture decisions, and code quality.
+- **Freelance and consulting clients** assessing capability and reliability.
 
 ## Product Purpose
 
-Professional portfolio for Alonso Villanueva — full-stack software engineer, open source contributor, tech educator, and founder of EndToEndLabCR and NaranjoSolutions. The portfolio communicates capability, credibility, and availability across all three audiences simultaneously. Success means a visitor leaves with a clear, accurate understanding of who Alonso is, what he's built, and how to work with him.
+Personal portfolio and main hub of Alonso Villanueva's professional brand: **Senior Software Engineer & Team Lead** building scalable platforms, developer tools, and open-source products. A visitor should understand who Alonso is, what he has built, and where to find the work within seconds.
 
 ## Positioning
 
-**Founder + educator angle.** Unlike typical engineer portfolios that list skills and projects, this one tells a founder/leader story — someone who builds organizations (EndToEndLabCR, NaranjoSolutions), creates educational resources, contributes to open source, and amplifies other developers' work. The portfolio itself is proof of production engineering standards: every detail of code quality, performance, and design backs the claims.
+One story across every channel: a senior engineer and technical leader across backend and platform engineering, software architecture, developer tooling, cloud, open source, and AI-assisted engineering.
 
-A competitor's site couldn't truthfully copy this because the founder/educator evidence (real orgs, real projects with live metrics, real educational content) is verified through external links and living GitHub repositories.
+Preferred terms: Senior Software Engineer, Team Lead, Software Architecture, Backend Engineering, Platform Engineering, Developer Tooling, Open Source, Technical Leadership, AI-assisted Engineering.
+
+Avoid presenting Alonso as someone learning to become an engineer or architect, as frontend-focused, or as a collection of unrelated side projects.
+
+## Brand Hierarchy
+
+```text
+alonsovndev.com            main hub (this site)
+├── github.com/Alonsovn    personal engineering identity
+├── github.com/alonsovndev open-source engineering lab
+├── EndToEndLabCR          open-source engineering community
+└── NaranjoSolutions       freelance and consulting
+```
 
 ## Operating Context
 
-- Viewed by recruiters scanning many portfolios quickly — must communicate depth within seconds
-- Viewed by engineers following links from GitHub, documentation, or community references
-- Viewed by potential freelance clients who may spend more time evaluating fit
-- Serves as permanent professional identity at alonsovndev.com
-- Content is static but should feel alive — real metrics, working links, current information
-- Deployed on Cloudflare Workers (see docs/deployment.md)
+- Viewed by recruiters scanning many portfolios; depth must be clear within seconds.
+- Viewed by engineers following links from GitHub and documentation.
+- Permanent professional identity at `alonsovndev.com`, deployed on Cloudflare Workers (see `docs/deployment.md`).
+- Static content; every claim is verifiable through linked repositories.
 
-## Capabilities and Constraints
+## Stack (as built)
 
-**Confirmed capabilities:**
-- 7-section single-page scroll layout: Hero, About, Skills, Projects, Organizations, Timeline, Contact
-- Dark/light theme toggle with system-preference detection and localStorage persistence
-- Lazy-loaded sections with staggered Framer Motion animations
-- Filterable project grid (All / Open Source / Freelance)
-- Vertical timeline of experience entries
-- Contact section with email, phone, resume download
-- Full SEO: Open Graph, Twitter Cards, JSON-LD Person schema, meta keywords, canonical URL
-- WCAG 2.1 AA target with skip-to-content link, focus-visible ring, reduced-motion support
+Astro 7, TypeScript, static HTML at build time, small typed client scripts in `src/scripts/`, CSS design tokens with light/dark themes, Oxlint.
 
-**Non-negotiable constraints:**
-- All factual content is locked: organization names, project data, experience entries, skills must remain accurate
-- Dark/light theme toggle must remain
-- Single-page scroll architecture must remain
-- Domain: alonsovndev.com
-- Resume: /resume.pdf
+## Content
 
-**Technical stack (as built):**
-- React 19, TypeScript 6, Vite 8
-- Ant Design v6 with custom ConfigProvider theme tokens
-- CSS Modules for component-level styling
-- Framer Motion for animations
+- `src/data/projects.json`: flagship projects first (DevWorkWire, Open Projects Hub, AI Engineer Setup, one client project), each with problem, what was built, decisions, and role.
+- `src/data/organizations.json`: alonsovndev (open-source lab), EndToEndLabCR (community), NaranjoSolutions (freelance).
+- `src/data/experience.json`, `src/data/skills.json`, `src/data/site.ts`: timeline, skills (backend and platform first), URLs and SEO defaults.
+- `public/resume.pdf`.
 
-## Brand Commitments
+**Absences (do not fabricate):** no testimonials, press mentions, or case-study metrics.
 
-- **Name:** Alonso Villanueva
-- **GitHub:** Alonsovn
-- **Organizations:** EndToEndLabCR (tech education), NaranjoSolutions (freelance), alonsovndev (personal open source)
-- **Voice:** Professional, direct, community-oriented. Not corporate — human and approachable.
-- **Domain:** alonsovndev.com
+## Principles
 
-## Evidence on Hand
+1. **Evidence over claims**: link to real repositories and live demos.
+2. **One story**: terminology matches the GitHub profile, the organization README, and LinkedIn.
+3. **Serve all three audiences without diluting any.**
+4. **The portfolio is proof**: performance, accessibility, and code quality back the claims.
+5. **Facts are locked**: organization names, project data, and experience entries stay accurate.
 
-- `src/data/experience.json` — 6 timeline entries (2 org foundations, 3 projects, 1 OSS milestone)
-- `src/data/projects.json` — 5 featured projects with categories, tech stacks, real GitHub links, live metrics (stars, contributors)
-- `src/data/organizations.json` — 2 organizations with roles, missions, focus areas
-- `src/data/skills.json` — 26 skills across 4 categories (Frontend, Backend, DevOps, Tools)
-- `public/resume.pdf` — downloadable resume
-- `src/assets/hero.png` — hero section image
-- Live GitHub repositories linked from all project entries
+## Accessibility
 
-**Absences (do not fabricate):**
-- No testimonials or client quotes
-- No press mentions or media coverage
-- No case studies with measurable outcomes
-- No headshot or personal photo beyond hero graphic
-
-## Product Principles
-
-1. **Evidence over claims** — show real stars, contributors, live GitHub links. Every assertion is verifiable externally.
-2. **Founder-first narrative** — every section reinforces the story of someone who builds organizations and communities, not just writes code.
-3. **Serve all three without diluting any** — recruiters, engineers, and clients must each find what they need without the surface feeling split or compromised.
-4. **The portfolio is proof** — code quality, performance, and design demonstrate the engineering standards the content describes.
-5. **Content is sacred** — facts are immutable. Only presentation changes.
-
-## Accessibility & Inclusion
-
-- WCAG 2.1 AA target
-- Skip-to-content link present
-- :focus-visible ring on interactive elements
-- prefers-reduced-motion support for animation
-- Custom scrollbar styling for visibility
-- SEO meta for screen-reader and crawler compatibility
+WCAG 2.1 AA target: skip-to-content link, visible focus ring, `prefers-reduced-motion` support, light/dark theme toggle.

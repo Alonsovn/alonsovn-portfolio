@@ -39,7 +39,7 @@
     "type": "open-source",
     "title": "Open Source Software Engineering Projects",
     "organization": "alonsovndev",
-    "description": "Building open-source developer-productivity tools and applications with React, TypeScript, Python, FastAPI, PostgreSQL and Docker.",
+    "description": "Open-source software engineering lab: DevWorkWire (developer workflow CLI), Open Projects Hub (AI-assisted requirements platform) and AI Engineer Setup (portable AI-agent tooling).",
     "date": "Ongoing",
     "link": "https://github.com/alonsovndev",
     "highlights": [

@@ -12,7 +12,7 @@ const year = new Date().getFullYear();
       href={site.socials.github}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="GitHub profile"
+      aria-label="GitHub profile (Alonsovn)"
     >
       <Icon name="github" />
     </a>
@@ -24,6 +24,15 @@ const year = new Date().getFullYear();
       aria-label="LinkedIn profile"
     >
       <Icon name="linkedin" />
+    </a>
+    <a
+      class="btn btn--text btn--sm"
+      href={site.ossProfile}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="alonsovndev open-source organization"
+    >
+      alonsovndev
     </a>
   </div>
   <p class="text-secondary">
@@ -44,6 +53,7 @@ const year = new Date().getFullYear();
 
   .socials {
     display: flex;
+    align-items: center;
     gap: 1rem;
   }
 

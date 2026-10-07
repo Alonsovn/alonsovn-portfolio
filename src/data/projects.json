@@ -1,31 +1,71 @@
 [
   {
-    "id": "story-flow-engine",
-    "title": "Story Flow Engine",
-    "description": "A narrative flow engine for managing branching storylines and interactive storytelling experiences.",
-    "longDescription": "Story Flow Engine is a TypeScript-based narrative engine that enables developers to create complex branching storylines with state management, conditional paths, and dynamic content generation. Built with a focus on extensibility and developer experience.",
-    "tags": ["TypeScript", "State Management", "Narrative"],
-    "techStack": ["TypeScript", "Node.js"],
+    "id": "dev-work-wire",
+    "title": "DevWorkWire",
+    "description": "Workflow CLI: Markdown epics and stories to validated, duplicate-free Jira backlogs. Agent-ready.",
+    "problem": "Work planned in documents gets re-typed into the tracker by hand, creating duplicates and lost acceptance criteria.",
+    "built": "A Typer CLI that parses and validates Markdown work items, previews create/skip actions, imports into Jira idempotently, and exposes a stable JSON contract plus a portable AI-agent skill.",
+    "role": "Creator and maintainer: architecture, implementation, and documentation.",
+    "decisions": "Clean Architecture with a WorkItemProvider port so the tracker is swappable; local import state for safe resumption; explicit --yes for agent-driven writes.",
+    "tags": ["CLI", "Developer Experience", "AI Agents"],
+    "techStack": ["Python", "Typer", "Jira API", "Clean Architecture"],
     "category": "open-source",
     "organization": "alonsovndev",
     "links": {
-      "github": "https://github.com/alonsovndev/story-flow-engine"
+      "github": "https://github.com/alonsovndev/dev-work-wire"
     },
     "featured": true
   },
   {
-    "id": "opencode-setup",
-    "title": "OpenCode Setup",
-    "description": "Configuration toolkit for OpenCode AI coding assistant with orchestration models, quality gates, and domain subagents.",
-    "longDescription": "A comprehensive configuration and setup toolkit for OpenCode, the AI coding assistant. Includes orchestration models, quality gates, domain-specific subagent routing, and bootstrap scripts for repository configuration.",
-    "tags": ["Configuration", "AI Tools", "Developer Experience"],
-    "techStack": ["Shell", "Markdown", "YAML", "TypeScript"],
+    "id": "open-projects-hub",
+    "title": "Open Projects Hub",
+    "description": "AI-assisted platform that turns raw requirements into reviewable user stories and backlogs.",
+    "problem": "Client requirements arrive vague, and turning them into testable user stories is slow and rarely reviewed.",
+    "built": "A FastAPI + React platform where an LLM drafts BDD user stories from raw input, a human approves them, and clients review approved stories read-only with an access code.",
+    "role": "Creator and maintainer: product definition, architecture, backend, frontend, and automated quality gates.",
+    "decisions": "Clean Architecture/DDD with one bounded context per feature; encrypted per-user LLM keys; no persisted AI drafts; 20 ADRs documenting the trade-offs.",
+    "tags": ["AI", "Requirements", "Architecture"],
+    "techStack": ["Python", "FastAPI", "React", "TypeScript", "PostgreSQL"],
     "category": "open-source",
     "organization": "alonsovndev",
     "links": {
-      "github": "https://github.com/alonsovndev/opencode-setup"
+      "github": "https://github.com/alonsovndev/open-projects-hub"
     },
     "featured": true
+  },
+  {
+    "id": "ai-engineer-setup",
+    "title": "AI Engineer Setup",
+    "description": "Portable skills, agents, and instructions for Claude Code, Codex, opencode, and Copilot CLI.",
+    "problem": "Each AI coding tool needs its own configuration, so standards drift between tools and machines.",
+    "built": "A single repository of shared instructions, skills, agents, and commands, with install and verify scripts that link them into each harness and check parity.",
+    "role": "Creator and maintainer.",
+    "decisions": "Canonical shared sources with harness adapters; symlink-based install with backups; verification that every agent and command exists for every supported tool.",
+    "tags": ["AI-assisted Engineering", "Developer Tooling"],
+    "techStack": ["Shell", "Markdown", "Claude Code", "Codex", "opencode"],
+    "category": "open-source",
+    "organization": "alonsovndev",
+    "links": {
+      "github": "https://github.com/alonsovndev/ai-engineer-setup"
+    },
+    "featured": true
+  },
+  {
+    "id": "orthspine-web",
+    "title": "Orthopedic Spine Clinic Platform",
+    "description": "Client project: clinic website with online booking and an admin dashboard, on a FastAPI backend.",
+    "tags": ["Freelance", "Healthcare", "Full-stack"],
+    "techStack": ["React", "TypeScript", "Ant Design", "FastAPI", "PostgreSQL"],
+    "category": "freelance",
+    "organization": "NaranjoSolutions",
+    "links": {
+      "demo": "https://orthspine-web-react.vercel.app/"
+    },
+    "featured": true,
+    "problem": "A physiotherapy clinic needed a public web presence plus an internal way to manage appointments, patients, and testimonials.",
+    "built": "A React site with services, testimonials, contact, and appointment booking, plus an authenticated admin area, backed by a FastAPI + PostgreSQL API with JWT auth and Alembic migrations.",
+    "role": "Freelance engineer at NaranjoSolutions: design, frontend, backend, and deployment.",
+    "decisions": "Feature-based React structure; REST API with Pydantic validation; Dockerized services; frontend deployed on Vercel. Client repositories are private."
   },
   {
     "id": "template-docs",
@@ -39,6 +79,20 @@
     "links": {
       "github": "https://github.com/alonsovndev/template-docs",
       "documentation": "https://alonsovndev.github.io/template-docs/"
+    },
+    "featured": false
+  },
+  {
+    "id": "story-flow-engine",
+    "title": "Story Flow Engine",
+    "description": "Clean Architecture reference CLI that turns Markdown epics and stories into Jira issues.",
+    "longDescription": "A Python CLI with Typer and InquirerPy that parses structured Markdown epics and user stories and creates them in Jira through a ports-and-adapters design. DevWorkWire is its actively developed successor.",
+    "tags": ["CLI", "Clean Architecture", "Jira"],
+    "techStack": ["Python", "Typer", "Jira API"],
+    "category": "open-source",
+    "organization": "alonsovndev",
+    "links": {
+      "github": "https://github.com/alonsovndev/story-flow-engine"
     },
     "featured": false
   },
@@ -73,29 +127,16 @@
   },
   {
     "id": "naranjo-freelance",
-    "title": "NaranjoSolutions Client Work",
-    "description": "Freelance software development projects including web applications, automation tools, and technical consulting.",
-    "longDescription": "Emerging freelance portfolio under NaranjoSolutions, delivering custom software solutions for clients across various industries. Focused on modern web technologies and clean, maintainable code.",
+    "title": "NaranjoSolutions",
+    "description": "Freelance and consulting practice: web applications, backend APIs, automation, and DevOps for clients.",
+    "longDescription": "NaranjoSolutions delivers full-cycle client projects, from React frontends and FastAPI backends to Docker, GitHub Actions, and AWS delivery. Client repositories are private for confidentiality.",
     "tags": ["Freelance", "Web Development", "Consulting"],
-    "techStack": ["React", "TypeScript", "Node.js", "PostgreSQL"],
+    "techStack": ["React", "TypeScript", "FastAPI", "PostgreSQL", "Docker"],
     "category": "freelance",
     "organization": "NaranjoSolutions",
     "links": {
       "github": "https://github.com/NaranjoSolutions"
     },
     "featured": false
-  },
-  {
-    "id": "orthspine-web",
-    "title": "Orthopedic Spine Website",
-    "description": "Marketing website for an orthopedic spine practice, built as a client project for NaranjoSolutions.",
-    "tags": ["Freelance", "Web Development", "Healthcare"],
-    "techStack": ["React", "Vercel"],
-    "category": "freelance",
-    "organization": "NaranjoSolutions",
-    "links": {
-      "demo": "https://orthspine-web-react.vercel.app/"
-    },
-    "featured": true
   }
 ]

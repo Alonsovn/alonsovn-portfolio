@@ -1,6 +1,6 @@
 # alonsovndev.com
 
-Personal portfolio built with [Astro](https://astro.build) and TypeScript. Every section is rendered to static HTML at build time; the only client JavaScript is a handful of small scripts in `src/scripts/` (theme toggle, scroll-spy, filters, mobile menu, scroll-to-top, scroll reveal).
+Portfolio of Alonso Villanueva, Senior Software Engineer & Team Lead, and hub for [github.com/Alonsovn](https://github.com/Alonsovn) and [github.com/alonsovndev](https://github.com/alonsovndev). Built with [Astro](https://astro.build) and TypeScript. Every section is rendered to static HTML at build time; the only client JavaScript is a handful of small scripts in `src/scripts/` (theme toggle, scroll-spy, filters, mobile menu, scroll-to-top, scroll reveal).
 
 ## Commands
 

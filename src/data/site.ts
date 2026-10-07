@@ -4,9 +4,9 @@ export const site = {
   locale: 'en_US',
   fullName: 'Alonso Villanueva Naranjo',
   employer: 'Cargill',
-  title: 'Alonso — Senior Software Engineer, Team Lead & Open Source Contributor',
+  title: 'Alonso Villanueva — Senior Software Engineer & Team Lead',
   description:
-    'Senior software engineer and team lead with 10+ years in enterprise applications, backend services and cloud data platforms. Java, Spring Boot, Python, React, TypeScript, AWS and open source tooling.',
+    'Senior Software Engineer & Team Lead building scalable platforms, developer tools and open-source products. Backend and platform engineering, software architecture, cloud, open source and AI-assisted engineering.',
   jobTitle: 'Senior Software Engineer & Team Lead',
   knowsAbout: [
     'Java',
@@ -17,6 +17,8 @@ export const site = {
     'AWS',
     'Kubernetes',
     'Cloud Data Platforms',
+    'Software Architecture',
+    'Developer Tooling',
     'Open Source',
     'AI-Assisted Engineering',
   ],

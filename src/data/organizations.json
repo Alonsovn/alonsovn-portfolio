@@ -1,17 +1,23 @@
 [
   {
+    "id": "alonsovndev",
+    "name": "alonsovndev",
+    "role": "Founder & Maintainer",
+    "description": "Open-source software engineering lab: developer tools, reference architectures, reusable engineering foundations, and open-source products.",
+    "mission": "To build open-source software that improves how teams design, build, and deliver software.",
+    "focusAreas": ["Developer Tooling", "AI-assisted Engineering", "Software Architecture", "Backend & Platform Engineering", "Reference Implementations"],
+    "links": {
+      "github": "https://github.com/alonsovndev"
+    },
+    "color": "#0d9488"
+  },
+  {
     "id": "endtoendlabcr",
     "name": "EndToEndLabCR",
-    "role": "Lead",
+    "role": "Community Lead",
     "description": "An open-source software engineering community focused on practical development, collaboration and knowledge sharing, with reusable project templates, documentation structures and engineering workflows.",
     "mission": "To bridge the gap between theoretical knowledge and practical software engineering skills through structured learning and collaborative projects.",
-    "focusAreas": [
-      "Tech Documentation",
-      "Knowledge Transfer Sessions",
-      "Template Projects",
-      "Community Building",
-      "Real-world Practice"
-    ],
+    "focusAreas": ["Tech Documentation", "Knowledge Transfer Sessions", "Template Projects", "Community Building", "Real-world Practice"],
     "links": {
       "github": "https://github.com/EndToEndLabCR",
       "documentation": "https://endtoendlabcr.github.io/endtoendlabcr-docs/"
@@ -22,16 +28,12 @@
     "id": "naranjosolutions",
     "name": "NaranjoSolutions",
     "role": "Founder",
-    "description": "A freelance software development organization delivering custom web applications, automation tools, and technical consulting services to clients.",
+    "description": "Freelance and consulting practice delivering web applications, backend APIs, automation, and DevOps for clients. Client work such as the Orthopedic Spine clinic platform is private; a public demo is available.",
     "mission": "To provide high-quality, modern software solutions that help businesses and individuals achieve their goals through technology.",
-    "focusAreas": [
-      "Web Application Development",
-      "Technical Consulting",
-      "Custom Solutions",
-      "Freelance Services"
-    ],
+    "focusAreas": ["Web Applications (React, TypeScript)", "Backend APIs (FastAPI, PostgreSQL)", "DevOps & CI/CD (Docker, GitHub Actions, AWS)", "Automation & Custom Tools", "Technical Consulting"],
     "links": {
-      "github": "https://github.com/NaranjoSolutions"
+      "github": "https://github.com/NaranjoSolutions",
+      "demo": "https://orthspine-web-react.vercel.app/"
     },
     "color": "#722ed1"
   }

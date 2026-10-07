@@ -3,6 +3,10 @@ export interface Project {
   title: string;
   description: string;
   longDescription?: string;
+  problem?: string;
+  built?: string;
+  role?: string;
+  decisions?: string;
   tags: string[];
   techStack: string[];
   category: 'open-source' | 'freelance' | 'personal';
@@ -46,6 +50,7 @@ export interface Organization {
   links: {
     github: string;
     website?: string;
+    demo?: string;
     documentation?: string;
   };
   projects?: string[];

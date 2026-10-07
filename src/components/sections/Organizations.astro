@@ -8,7 +8,7 @@ const organizations = orgsData as Organization[];
 ---
 
 <section id={sectionIds.organizations} class="organizations">
-  <h2 class="title reveal">Side Ventures</h2>
+  <h2 class="title reveal">Organizations</h2>
 
   <ul class="grid">
     {
@@ -29,6 +29,17 @@ const organizations = orgsData as Organization[];
               <Icon name="github" />
               GitHub<span class="sr-only"> for {org.name}</span>
             </a>
+            {org.links.demo && (
+              <a
+                class="btn btn--link btn--sm"
+                href={org.links.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon name="link" />
+                Live demo<span class="sr-only"> from {org.name}</span>
+              </a>
+            )}
           </article>
         </li>
       ))
@@ -53,7 +64,7 @@ const organizations = orgsData as Organization[];
 
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1rem;
     list-style: none;
   }
