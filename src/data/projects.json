@@ -69,5 +69,18 @@
       "github": "https://github.com/NaranjoSolutions"
     },
     "featured": false
+  },
+  {
+    "id": "orthspine-web",
+    "title": "Orthopedic Spine Website",
+    "description": "Marketing website for an orthopedic spine practice, built as a client project for NaranjoSolutions.",
+    "tags": ["Freelance", "Web Development", "Healthcare"],
+    "techStack": ["React", "Vercel"],
+    "category": "freelance",
+    "organization": "NaranjoSolutions",
+    "links": {
+      "demo": "https://orthspine-web-react.vercel.app/"
+    },
+    "featured": true
   }
 ]
