@@ -13,11 +13,6 @@ export interface Project {
     documentation?: string;
   };
   featured: boolean;
-  metrics?: {
-    stars?: number;
-    contributors?: number;
-    downloads?: number;
-  };
 }
 
 export interface Skill {

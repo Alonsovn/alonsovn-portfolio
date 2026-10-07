@@ -11,11 +11,7 @@
     "links": {
       "github": "https://github.com/alonsovndev/story-flow-engine"
     },
-    "featured": true,
-    "metrics": {
-      "stars": 15,
-      "contributors": 3
-    }
+    "featured": true
   },
   {
     "id": "opencode-setup",
@@ -29,11 +25,7 @@
     "links": {
       "github": "https://github.com/alonsovndev/opencode-setup"
     },
-    "featured": true,
-    "metrics": {
-      "stars": 12,
-      "contributors": 2
-    }
+    "featured": true
   },
   {
     "id": "e2e-docs",
@@ -48,10 +40,7 @@
       "github": "https://github.com/EndToEndLabCR/documentation-docs-markdown",
       "documentation": "https://endtoendlabcr.github.io/documentation-docs-markdown/"
     },
-    "featured": false,
-    "metrics": {
-      "contributors": 5
-    }
+    "featured": false
   },
   {
     "id": "e2e-templates",
@@ -65,10 +54,7 @@
     "links": {
       "github": "https://github.com/EndToEndLabCR"
     },
-    "featured": false,
-    "metrics": {
-      "contributors": 4
-    }
+    "featured": false
   },
   {
     "id": "naranjo-freelance",
