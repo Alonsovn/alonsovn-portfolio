@@ -45,29 +45,6 @@ const filterOptions = [
       projects.map((project, index) => (
         <div class="reveal" style={`--reveal-index: ${index}`} data-filter-item data-category={project.category}>
           <article class="card card--hoverable projectCard">
-            {(project.metrics?.stars !== undefined || project.metrics?.contributors !== undefined) && (
-              <div class="metrics">
-                {project.metrics?.stars !== undefined && (
-                  <span class="metric">
-                    <span class="metricValue">{project.metrics.stars}</span>
-                    <span class="metricLabel">
-                      <Icon name="star" size={12} />
-                      <span class="sr-only">stars</span>
-                    </span>
-                  </span>
-                )}
-                {project.metrics?.contributors !== undefined && (
-                  <span class="metric">
-                    <span class="metricValue">{project.metrics.contributors}</span>
-                    <span class="metricLabel">
-                      <Icon name="team" size={12} />
-                      <span class="sr-only">contributors</span>
-                    </span>
-                  </span>
-                )}
-              </div>
-            )}
-
             <div class="heading">
               <h3 class="projectTitle">{project.title}</h3>
               {project.featured && <span class="tag tag--tinted featured" style="--tag-color: #d48806">Featured</span>}
@@ -158,32 +135,6 @@ const filterOptions = [
 
   .projectCard:hover {
     transform: translateY(-4px);
-  }
-
-  .metrics {
-    display: flex;
-    gap: 1.5rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .metric {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.15rem;
-  }
-
-  .metricValue {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 600;
-    line-height: 1.1;
-    color: var(--color-primary);
-  }
-
-  .metricLabel {
-    display: inline-flex;
-    opacity: 0.5;
   }
 
   .heading {
