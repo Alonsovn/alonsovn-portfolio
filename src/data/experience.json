@@ -1,65 +1,90 @@
 [
   {
-    "id": "e2e-foundation",
-    "type": "organization",
-    "title": "Founded EndToEndLabCR",
+    "id": "cargill-senior",
+    "type": "work",
+    "title": "Senior Software Engineer / Team Lead",
+    "organization": "Cargill — Costa Rica",
+    "description": "Team lead since Dec 2025, combining technical direction, architecture, code reviews and mentoring with hands-on development of enterprise applications, integrations and cloud data platforms.",
+    "date": "Nov 2020 – Present",
+    "highlights": [
+      "Design, develop and support backend services, integrations and APIs with Java, Spring Boot, Python and FastAPI",
+      "Coordinate the migration of enterprise data capabilities from legacy Hadoop/HDFS to AWS, integrating JDBC databases, Kafka, APIs and files",
+      "Build web application components with React, TypeScript, Vite, Redux Toolkit and Ant Design",
+      "Implement CI/CD and deployment automation with GitHub Actions, Docker, Kubernetes and infrastructure as code",
+      "Drive improvements in engineering standards, software quality, automated testing, documentation and reliability"
+    ]
+  },
+  {
+    "id": "cargill-analyst",
+    "type": "work",
+    "title": "Application Development Analyst",
+    "organization": "Cargill — Costa Rica",
+    "description": "Delivered application and integration solutions for global operations, working directly with business partners and IT teams.",
+    "date": "Dec 2017 – Oct 2020",
+    "highlights": [
+      "Designed, developed, tested and documented applications and integrations across concurrent projects",
+      "Provided troubleshooting, application support, enhancements and knowledge transfer"
+    ]
+  },
+  {
+    "id": "route-miner",
+    "type": "work",
+    "title": "Application Developer",
+    "organization": "Route Miner — Costa Rica",
+    "description": "Built mobile and backend functionality with unit and UI testing; troubleshot issues and improved performance.",
+    "date": "Jun 2016 – Nov 2017"
+  },
+  {
+    "id": "alonsovndev-oss",
+    "type": "open-source",
+    "title": "Open Source Software Engineering Projects",
+    "organization": "alonsovndev",
+    "description": "Building open-source developer-productivity tools and applications with React, TypeScript, Python, FastAPI, PostgreSQL and Docker.",
+    "date": "Ongoing",
+    "link": "https://github.com/alonsovndev",
+    "highlights": [
+      "Apply Clean Architecture, Domain-Driven Design, API-first design, automated testing and CI/CD"
+    ]
+  },
+  {
+    "id": "e2e-community",
+    "type": "open-source",
+    "title": "Open Source Software Engineering Community",
     "organization": "EndToEndLabCR",
-    "description": "Founded a tech education organization focused on knowledge transfer, documentation, and hands-on learning for software engineers.",
-    "date": "2023",
+    "description": "Lead an open-source software engineering community focused on practical development, collaboration and knowledge sharing.",
+    "date": "Ongoing",
     "link": "https://github.com/EndToEndLabCR",
     "highlights": [
-      "Built comprehensive documentation platform",
-      "Created template projects for KT sessions",
-      "Fostered community of learners and contributors"
+      "Establish reusable project templates, documentation structures and engineering workflows"
     ]
   },
   {
-    "id": "naranjo-foundation",
-    "type": "organization",
-    "title": "Founded NaranjoSolutions",
-    "organization": "NaranjoSolutions",
-    "description": "Established a freelance software development organization providing custom solutions and technical consulting.",
-    "date": "2023",
-    "link": "https://github.com/NaranjoSolutions",
+    "id": "big-school-master",
+    "type": "education",
+    "title": "Master's in AI Development",
+    "organization": "BIG School — Spain",
+    "description": "Postgraduate studies in AI development.",
+    "date": "2025 – Present"
+  },
+  {
+    "id": "una-bachelor",
+    "type": "education",
+    "title": "Bachelor's Degree in Information Systems Engineering",
+    "organization": "Universidad Nacional — Costa Rica",
+    "description": "Degree in Information Systems Engineering.",
+    "date": "2017"
+  },
+  {
+    "id": "certifications",
+    "type": "education",
+    "title": "Certifications & Professional Development",
+    "organization": "Platzi, Dell Boomi and others",
+    "description": "Continuous professional development across frontend, data and integration platforms.",
+    "date": "2018 – 2025",
     "highlights": [
-      "Delivering custom web applications",
-      "Technical consulting and architecture design",
-      "Building freelance portfolio"
+      "2025: React.js & Redux; React.js with Vite.js & TailwindCSS (Platzi)",
+      "2022: DataOps Fundamentals",
+      "2018–2019: Dell Boomi Associate Developer, Professional Developer and Production Administrator"
     ]
-  },
-  {
-    "id": "story-flow",
-    "type": "project",
-    "title": "Story Flow Engine",
-    "organization": "alonsovndev",
-    "description": "Released an open-source narrative flow engine for branching storylines and interactive storytelling.",
-    "date": "2024",
-    "link": "https://github.com/alonsovndev/story-flow-engine"
-  },
-  {
-    "id": "opencode",
-    "type": "project",
-    "title": "OpenCode Setup Toolkit",
-    "organization": "alonsovndev",
-    "description": "Created an AI coding assistant configuration toolkit with orchestration models, quality gates, and domain routing.",
-    "date": "2024",
-    "link": "https://github.com/alonsovndev/opencode-setup"
-  },
-  {
-    "id": "e2e-docs-launch",
-    "type": "project",
-    "title": "EndToEndLabCR Documentation Launch",
-    "organization": "EndToEndLabCR",
-    "description": "Launched comprehensive Markdown-based documentation platform for tech knowledge sharing.",
-    "date": "2024",
-    "link": "https://endtoendlabcr.github.io/documentation-docs-markdown/"
-  },
-  {
-    "id": "oss-journey",
-    "type": "open-source",
-    "title": "Open Source Journey Began",
-    "organization": "GitHub",
-    "description": "Started contributing to open source projects and building tools for the developer community.",
-    "date": "2019"
   }
 ]

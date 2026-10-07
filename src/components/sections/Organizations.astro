@@ -8,122 +8,91 @@ const organizations = orgsData as Organization[];
 ---
 
 <section id={sectionIds.organizations} class="organizations">
-  <h2 class="section-title title reveal">Organizations &amp; Leadership</h2>
+  <h2 class="title reveal">Side Ventures</h2>
 
-  <div class="grid">
+  <ul class="grid">
     {
       organizations.map((org, index) => (
-        <div class="reveal" style={`--reveal-index: ${index + 1}`}>
-          <article class="card card--hoverable orgCard" style={`border-top-color: ${org.color}`}>
-            <h3 class="orgName">{org.name}</h3>
-
-            <div class="role">
+        <li class="reveal" style={`--reveal-index: ${index + 1}`}>
+          <article class="card orgCard" style={`border-top-color: ${org.color}`}>
+            <div class="header">
+              <h3 class="orgName">{org.name}</h3>
               <span class="tag tag--solid" style={`--tag-color: ${org.color}`}>{org.role}</span>
             </div>
-
-            <p class="text-secondary">{org.description}</p>
-
-            <p class="mission text-secondary">{org.mission}</p>
-
-            <ul class="focusAreas">
-              {org.focusAreas.map((area) => <li class="tag">{area}</li>)}
-            </ul>
-
-            <div class="actions">
-              <a
-                class="btn btn--link btn--sm btn--icon"
-                href={org.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${org.name} on GitHub`}
-              >
-                <Icon name="github" />
-              </a>
-              {org.links.documentation && (
-                <a
-                  class="btn btn--link btn--sm"
-                  href={org.links.documentation}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Icon name="book" />
-                  Docs<span class="sr-only"> for {org.name}</span>
-                </a>
-              )}
-            </div>
+            <p class="description text-secondary">{org.description}</p>
+            <a
+              class="btn btn--link btn--sm"
+              href={org.links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon name="github" />
+              GitHub<span class="sr-only"> for {org.name}</span>
+            </a>
           </article>
-        </div>
+        </li>
       ))
     }
-  </div>
+  </ul>
 </section>
 
 <style>
   .organizations {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 6rem 1.5rem;
+    padding: 3rem 1.5rem;
   }
 
   .title {
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
   }
 
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
+    list-style: none;
   }
 
-  .grid > div {
+  .grid > li {
     display: flex;
   }
 
   .orgCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
     width: 100%;
+    padding: 1.25rem;
     border-top: 3px solid transparent;
   }
 
-  .orgCard:hover {
-    transform: translateY(-4px);
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .orgName {
-    margin-bottom: 1rem;
     font-family: var(--font-body);
     font-size: 16px;
     font-weight: 600;
   }
 
-  .role {
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-  }
-
-  .mission {
-    margin: 1rem 0;
-    padding: 0.75rem 0 0.75rem 1rem;
-    border-left: 1px solid var(--color-border);
-    font-style: italic;
-  }
-
-  .focusAreas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 1rem;
-    list-style: none;
-  }
-
-  .actions {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
+  .description {
+    flex: 1;
+    font-size: 0.9rem;
   }
 
   @media (max-width: 768px) {
     .organizations {
-      padding: 4rem 1rem;
+      padding: 2.5rem 1rem;
     }
 
     .grid {

@@ -48,7 +48,7 @@
       "github": "https://github.com/EndToEndLabCR/documentation-docs-markdown",
       "documentation": "https://endtoendlabcr.github.io/documentation-docs-markdown/"
     },
-    "featured": true,
+    "featured": false,
     "metrics": {
       "contributors": 5
     }

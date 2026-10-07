@@ -21,7 +21,9 @@ const structuredData = [
   {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: site.name,
+    name: site.fullName,
+    alternateName: site.name,
+    worksFor: { '@type': 'Organization', name: site.employer },
     url: site.url,
     description,
     image: ogImageUrl,

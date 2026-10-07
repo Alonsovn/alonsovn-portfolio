@@ -30,11 +30,6 @@ const year = new Date().getFullYear();
     Built with <Icon name="heart" size={14} class="heart" /> using Astro and TypeScript
   </p>
   <p class="text-secondary">&copy; {year} Alonso. All rights reserved.</p>
-  <p class="orgs">
-    <a href={site.organizations.endToEndLab} target="_blank" rel="noopener noreferrer">EndToEndLabCR</a>
-    <span class="text-secondary" aria-hidden="true">|</span>
-    <a href={site.organizations.naranjoSolutions} target="_blank" rel="noopener noreferrer">NaranjoSolutions</a>
-  </p>
 </footer>
 
 <style>
@@ -56,10 +51,5 @@ const year = new Date().getFullYear();
     vertical-align: -2px;
     color: var(--color-primary);
     fill: currentColor;
-  }
-
-  .orgs {
-    display: flex;
-    gap: 0.5rem;
   }
 </style>
