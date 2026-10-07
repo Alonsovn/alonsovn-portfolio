@@ -15,12 +15,14 @@ const { title = site.title, description = site.description } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, site.url).href;
 const ogImageUrl = new URL(site.ogImage, site.url).href;
-const sameAs = Object.values(site.socials);
+const sameAs = [...Object.values(site.socials), site.ossProfile];
+const personId = `${site.url}/#person`;
 
 const structuredData = [
   {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': personId,
     name: site.fullName,
     alternateName: site.name,
     worksFor: { '@type': 'Organization', name: site.employer },
@@ -28,6 +30,7 @@ const structuredData = [
     description,
     image: ogImageUrl,
     jobTitle: site.jobTitle,
+    address: { '@type': 'PostalAddress', addressCountry: site.countryCode },
     sameAs,
     knowsAbout: site.knowsAbout,
   },
@@ -37,6 +40,8 @@ const structuredData = [
     name: `${site.name} — Portfolio`,
     url: site.url,
     inLanguage: 'en',
+    publisher: { '@id': personId },
+    author: { '@id': personId },
   },
 ];
 
@@ -72,16 +77,14 @@ const themeBootstrap = `(function(){
     <script is:inline set:html={themeBootstrap} />
 
     <title>{title}</title>
-    <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="keywords" content={site.keywords} />
     <meta name="author" content={site.name} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content={site.name} />
+    <meta property="og:site_name" content={site.fullName} />
     <meta property="og:locale" content={site.locale} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
@@ -89,7 +92,7 @@ const themeBootstrap = `(function(){
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content={`${site.name} — ${site.jobTitle}`} />
+    <meta property="og:image:alt" content={`${site.fullName} — ${site.jobTitle}`} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={canonicalUrl} />

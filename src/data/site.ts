@@ -7,8 +7,6 @@ export const site = {
   title: 'Alonso — Senior Software Engineer, Team Lead & Open Source Contributor',
   description:
     'Senior software engineer and team lead with 10+ years in enterprise applications, backend services and cloud data platforms. Java, Spring Boot, Python, React, TypeScript, AWS and open source tooling.',
-  keywords:
-    'senior software engineer, team lead, Java, Spring Boot, Python, FastAPI, React, TypeScript, AWS, Kubernetes, enterprise software, open source contributor, portfolio, Costa Rica',
   jobTitle: 'Senior Software Engineer & Team Lead',
   knowsAbout: [
     'Java',
@@ -32,5 +30,7 @@ export const site = {
   organizations: {
     naranjoSolutions: 'https://github.com/NaranjoSolutions',
   },
+  ossProfile: 'https://github.com/alonsovndev',
+  countryCode: 'CR',
   themeColor: { light: '#fafaf9', dark: '#0c0a09' },
 } as const;
