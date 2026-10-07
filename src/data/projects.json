@@ -5,7 +5,7 @@
     "description": "A narrative flow engine for managing branching storylines and interactive storytelling experiences.",
     "longDescription": "Story Flow Engine is a TypeScript-based narrative engine that enables developers to create complex branching storylines with state management, conditional paths, and dynamic content generation. Built with a focus on extensibility and developer experience.",
     "tags": ["TypeScript", "State Management", "Narrative"],
-    "techStack": ["TypeScript", "Node.js", "Jest"],
+    "techStack": ["TypeScript", "Node.js"],
     "category": "open-source",
     "organization": "alonsovndev",
     "links": {
