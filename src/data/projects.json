@@ -135,7 +135,8 @@
     "category": "freelance",
     "organization": "NaranjoSolutions",
     "links": {
-      "github": "https://github.com/NaranjoSolutions"
+      "github": "https://github.com/NaranjoSolutions",
+      "website": "https://naranjo-solutions-web.vercel.app/"
     },
     "featured": false
   }

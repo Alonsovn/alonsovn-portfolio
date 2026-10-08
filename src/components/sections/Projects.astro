@@ -81,6 +81,17 @@ const filterOptions = [
                   <Icon name="github" />
                 </a>
               )}
+              {project.links.website && (
+                <a
+                  class="btn btn--link btn--sm"
+                  href={project.links.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon name="link" />
+                  Website<span class="sr-only"> for {project.title}</span>
+                </a>
+              )}
               {project.links.demo && (
                 <a
                   class="btn btn--link btn--sm"

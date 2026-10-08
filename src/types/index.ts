@@ -13,6 +13,7 @@ export interface Project {
   organization?: 'EndToEndLabCR' | 'NaranjoSolutions' | 'alonsovndev';
   links: {
     github?: string;
+    website?: string;
     demo?: string;
     documentation?: string;
   };

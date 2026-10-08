@@ -29,6 +29,17 @@ const organizations = orgsData as Organization[];
               <Icon name="github" />
               GitHub<span class="sr-only"> for {org.name}</span>
             </a>
+            {org.links.website && (
+              <a
+                class="btn btn--link btn--sm"
+                href={org.links.website}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon name="link" />
+                Website<span class="sr-only"> for {org.name}</span>
+              </a>
+            )}
             {org.links.demo && (
               <a
                 class="btn btn--link btn--sm"

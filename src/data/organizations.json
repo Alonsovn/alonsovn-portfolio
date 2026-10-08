@@ -33,6 +33,7 @@
     "focusAreas": ["Web Applications (React, TypeScript)", "Backend APIs (FastAPI, PostgreSQL)", "DevOps & CI/CD (Docker, GitHub Actions, AWS)", "Automation & Custom Tools", "Technical Consulting"],
     "links": {
       "github": "https://github.com/NaranjoSolutions",
+      "website": "https://naranjo-solutions-web.vercel.app/",
       "demo": "https://orthspine-web-react.vercel.app/"
     },
     "color": "#722ed1"
