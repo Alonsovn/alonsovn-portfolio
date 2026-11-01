@@ -100,35 +100,6 @@
     "featured": false
   },
   {
-    "id": "story-flow-engine",
-    "title": "Story Flow Engine",
-    "description": "Clean Architecture reference CLI that turns Markdown epics and stories into Jira issues.",
-    "longDescription": "A Python CLI with Typer and InquirerPy that parses structured Markdown epics and user stories and creates them in Jira through a ports-and-adapters design. DevWorkWire is its actively developed successor.",
-    "tags": ["CLI", "Clean Architecture", "Jira"],
-    "techStack": ["Python", "Typer", "Jira API"],
-    "category": "open-source",
-    "organization": "alonsovndev",
-    "links": {
-      "github": "https://github.com/alonsovndev/story-flow-engine"
-    },
-    "featured": false
-  },
-  {
-    "id": "e2e-docs",
-    "title": "EndToEndLabCR Documentation",
-    "description": "Comprehensive tech documentation platform for knowledge transfer and learning, built with Markdown and modern static site generation.",
-    "longDescription": "A complete documentation platform serving as a knowledge base for EndToEndLabCR's educational initiatives. Covers web development, software engineering best practices, and hands-on tutorials for knowledge transfer sessions.",
-    "tags": ["Documentation", "Education", "Markdown"],
-    "techStack": ["Markdown", "GitHub Pages", "Jekyll"],
-    "category": "open-source",
-    "organization": "EndToEndLabCR",
-    "links": {
-      "github": "https://github.com/EndToEndLabCR/endtoendlabcr-docs",
-      "documentation": "https://endtoendlabcr.github.io/endtoendlabcr-docs/"
-    },
-    "featured": false
-  },
-  {
     "id": "e2e-templates",
     "title": "KT Session Templates",
     "description": "Starter templates and boilerplate projects for Knowledge Transfer sessions covering React, TypeScript, and modern web development.",
