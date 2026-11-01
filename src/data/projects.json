@@ -85,31 +85,15 @@
     "featured": false
   },
   {
-    "id": "template-docs",
-    "title": "Template Docs",
-    "description": "Docusaurus documentation template with auto-generated sidebars, GitHub Pages deployment, and AI-guided section authoring.",
-    "longDescription": "A starter template for project documentation built with Docusaurus. Ships with section scaffolding for context, requirements, planning, architecture, decisions, and prototypes, plus Claude Code, opencode, and GitHub Copilot integrations that populate each section through guided interviews.",
-    "tags": ["Documentation", "Templates", "AI Tools"],
-    "techStack": ["Docusaurus", "TypeScript", "GitHub Actions"],
+    "id": "project-templates",
+    "title": "Project Templates",
+    "description": "Starter templates for new projects across the stack: Python and Java APIs, React, Astro, Next.js, React Native, and Docusaurus documentation.",
+    "tags": ["Templates", "Developer Experience"],
+    "techStack": ["Python", "Java", "React", "Astro", "Next.js", "React Native", "Docusaurus"],
     "category": "open-source",
     "organization": "alonsovndev",
     "links": {
-      "github": "https://github.com/alonsovndev/template-docs",
-      "documentation": "https://alonsovndev.github.io/template-docs/"
-    },
-    "featured": false
-  },
-  {
-    "id": "e2e-templates",
-    "title": "KT Session Templates",
-    "description": "Starter templates and boilerplate projects for Knowledge Transfer sessions covering React, TypeScript, and modern web development.",
-    "longDescription": "A collection of starter templates designed for EndToEndLabCR's Knowledge Transfer sessions. Each template provides a solid foundation for learning specific technologies with progressive complexity and real-world examples.",
-    "tags": ["Templates", "Education", "React", "TypeScript"],
-    "techStack": ["React", "TypeScript", "Vite", "CSS"],
-    "category": "open-source",
-    "organization": "EndToEndLabCR",
-    "links": {
-      "github": "https://github.com/EndToEndLabCR"
+      "github": "https://github.com/orgs/alonsovndev/repositories?q=template"
     },
     "featured": false
   },
