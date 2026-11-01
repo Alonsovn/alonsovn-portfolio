@@ -76,8 +76,10 @@
     "description": "A personal engineering field guide: practical reference for engineering decisions, built on real experience and lessons learned.",
     "tags": ["Documentation", "Engineering Practices"],
     "techStack": ["Docusaurus"],
-    "category": "personal",
+    "category": "open-source",
+    "organization": "alonsovndev",
     "links": {
+      "github": "https://github.com/alonsovndev/engineering-handbook",
       "documentation": "https://engineering-docs.alonsovndev.com/"
     },
     "featured": false
