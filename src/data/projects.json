@@ -29,7 +29,7 @@
     "category": "open-source",
     "organization": "alonsovndev",
     "links": {
-      "github": "https://github.com/alonsovndev/open-projects-hub",
+      "github": "https://github.com/orgs/alonsovndev/repositories?q=open-projects-hub",
       "website": "https://oph.alonsovndev.com/",
       "demo": "https://www.youtube.com/watch?v=Skdn5OdMcNg",
       "documentation": "https://oph-docs.alonsovndev.com/"
