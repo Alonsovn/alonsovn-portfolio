@@ -49,7 +49,7 @@ Astro 7, TypeScript, static HTML at build time, small typed client scripts in `s
 
 ## Content
 
-- `src/data/projects.json`: flagship projects first (DevWorkWire, Open Projects Hub, AI Engineer Setup, one client project), each with problem, what was built, decisions, and role.
+- `src/data/projects.json`: flagship projects first (DevWorkWire, Open Projects Hub, Code Agent Harness, one client project), each with problem, what was built, decisions, and role.
 - `src/data/organizations.json`: alonsovndev (open-source lab), EndToEndLabCR (community), NaranjoSolutions (freelance).
 - `src/data/experience.json`, `src/data/skills.json`, `src/data/site.ts`: timeline, skills (backend and platform first), URLs and SEO defaults.
 - `public/resume.pdf`.

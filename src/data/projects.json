@@ -29,13 +29,16 @@
     "category": "open-source",
     "organization": "alonsovndev",
     "links": {
-      "github": "https://github.com/alonsovndev/open-projects-hub"
+      "github": "https://github.com/alonsovndev/open-projects-hub",
+      "website": "https://oph.alonsovndev.com/",
+      "demo": "https://www.youtube.com/watch?v=Skdn5OdMcNg",
+      "documentation": "https://oph-docs.alonsovndev.com/"
     },
     "featured": true
   },
   {
-    "id": "ai-engineer-setup",
-    "title": "AI Engineer Setup",
+    "id": "code-agent-harness",
+    "title": "Code Agent Harness",
     "description": "Portable skills, agents, and instructions for Claude Code, Codex, opencode, and Copilot CLI.",
     "problem": "Each AI coding tool needs its own configuration, so standards drift between tools and machines.",
     "built": "A single repository of shared instructions, skills, agents, and commands, with install and verify scripts that link them into each harness and check parity.",
@@ -46,7 +49,7 @@
     "category": "open-source",
     "organization": "alonsovndev",
     "links": {
-      "github": "https://github.com/alonsovndev/ai-engineer-setup"
+      "github": "https://github.com/alonsovndev/code-agent-harness"
     },
     "featured": true
   },
@@ -66,6 +69,18 @@
     "built": "A React site with services, testimonials, contact, and appointment booking, plus an authenticated admin area, backed by a FastAPI + PostgreSQL API with JWT auth and Alembic migrations.",
     "role": "Freelance engineer at NaranjoSolutions: design, frontend, backend, and deployment.",
     "decisions": "Feature-based React structure; REST API with Pydantic validation; Dockerized services; frontend deployed on Vercel. Client repositories are private."
+  },
+  {
+    "id": "engineering-handbook",
+    "title": "Engineering Handbook",
+    "description": "A personal engineering field guide: practical reference for engineering decisions, built on real experience and lessons learned.",
+    "tags": ["Documentation", "Engineering Practices"],
+    "techStack": ["Docusaurus"],
+    "category": "personal",
+    "links": {
+      "documentation": "https://engineering-docs.alonsovndev.com/"
+    },
+    "featured": false
   },
   {
     "id": "template-docs",

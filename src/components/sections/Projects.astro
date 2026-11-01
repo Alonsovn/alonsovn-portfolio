@@ -103,7 +103,7 @@ const filterOptions = [
                   Demo<span class="sr-only"> for {project.title}</span>
                 </a>
               )}
-              {project.links.documentation && !project.links.demo && (
+              {project.links.documentation && (
                 <a
                   class="btn btn--link btn--sm"
                   href={project.links.documentation}
@@ -214,6 +214,7 @@ const filterOptions = [
 
   .footer {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
     gap: 8px;
     margin-top: auto;
