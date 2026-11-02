@@ -62,7 +62,7 @@
     "category": "freelance",
     "organization": "NaranjoSolutions",
     "links": {
-      "demo": "https://orthspine-web-react.vercel.app/"
+      "demo": "https://orthopedic-spine.alonsovndev.com/"
     },
     "featured": true,
     "problem": "A physiotherapy clinic needed a public web presence plus an internal way to manage appointments, patients, and testimonials.",
@@ -107,8 +107,7 @@
     "category": "freelance",
     "organization": "NaranjoSolutions",
     "links": {
-      "github": "https://github.com/NaranjoSolutions",
-      "website": "https://naranjo-solutions-web.vercel.app/"
+      "website": "https://naranjo-solutions.alonsovndev.com/"
     },
     "featured": false
   }

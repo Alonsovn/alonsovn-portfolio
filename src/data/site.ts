@@ -31,7 +31,7 @@ export const site = {
   },
   organizations: {
     naranjoSolutions: 'https://github.com/NaranjoSolutions',
-    naranjoSolutionsWebsite: 'https://naranjo-solutions-web.vercel.app/',
+    naranjoSolutionsWebsite: 'https://naranjo-solutions.alonsovndev.com/',
   },
   ossProfile: 'https://github.com/alonsovndev',
   countryCode: 'CR',
